@@ -1163,8 +1163,13 @@
         </fields>
     </config>
     
-    <!-- K2 backend field parameters -->
+    <!-- K2 backend field parameters Joomla 1.5 -->
     <params group="item-gallery" addPath="/plugins/k2/incptvk2imagegallery/incptvk2imagegallery/includes/elements">
         <param name="incptvk2imagegallery" type="incptvk2imagegallery" default="" label="" description="" /><!-- <<< Notice the param name -->
     </params>
+	
+	<!-- K2 backend field parameters Joomla greater or equal 1.6-->
+    <fields group="item-gallery" addfieldpath="/plugins/k2/incptvk2imagegallery/incptvk2imagegallery/includes/elements">
+        <field name="incptvk2imagegallery" type="incptvk2imagegallery" default="" label="" description="" /><!-- <<< Notice the param name -->
+    </fields>
 </install>

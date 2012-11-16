@@ -19,17 +19,17 @@ class K2ImageGalleryHelper {
 		$p = new JObject;
 		$pluginGroup = 'k2';
 
-		if(file_exists(JPATH_SITE.DS.'templates'.DS.$mainframe->getTemplate().DS.'html'.DS.$pluginName.DS.$tmpl.DS.str_replace('/',DS,$file))){
-			$p->file = JPATH_SITE.DS.'templates'.DS.$mainframe->getTemplate().DS.'html'.DS.$pluginName.DS.$tmpl.DS.$file;
+		if(file_exists(JPATH_SITE.'/'.'templates'.'/'.$mainframe->getTemplate().'/'.'html'.'/'.$pluginName.'/'.$tmpl.'/'.str_replace('/','/',$file))){
+			$p->file = JPATH_SITE.'/'.'templates'.'/'.$mainframe->getTemplate().'/'.'html'.'/'.$pluginName.'/'.$tmpl.'/'.$file;
 			$p->http = JURI::root(true)."/templates/".$mainframe->getTemplate()."/html/{$pluginName}/{$tmpl}/{$file}";
 		} else {
 			if(version_compare(JVERSION,'1.6.0','ge')) {
 				// Joomla! 1.6
-				$p->file = JPATH_SITE.DS.'plugins'.DS.$pluginGroup.DS.$pluginName.DS.$pluginName.DS.'tmpl'.DS.$tmpl.DS.$file;
+				$p->file = JPATH_SITE.'/'.'plugins'.'/'.$pluginGroup.'/'.$pluginName.'/'.$pluginName.'/'.'tmpl'.'/'.$tmpl.'/'.$file;
 				$p->http = JURI::root(true)."/plugins/{$pluginGroup}/{$pluginName}/{$pluginName}/tmpl/{$tmpl}/{$file}";
 			} else {
 				// Joomla! 1.5
-				$p->file = JPATH_SITE.DS.'plugins'.DS.$pluginGroup.DS.$pluginName.DS.'tmpl'.DS.$tmpl.DS.$file;
+				$p->file = JPATH_SITE.'/'.'plugins'.'/'.$pluginGroup.'/'.$pluginName.'/'.'tmpl'.'/'.$tmpl.'/'.$file;
 				$p->http = JURI::root(true)."/plugins/{$pluginGroup}/{$pluginName}/tmpl/{$tmpl}/{$file}";
 			}
 		}
