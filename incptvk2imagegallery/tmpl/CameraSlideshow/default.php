@@ -13,18 +13,18 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
     $getTemplatePath = K2ImageGalleryHelper::getTemplatePath($this->pluginName,'',$theme);
     $getTemplatePath = $getTemplatePath->http;
 
-    $document->addScript($getTemplatePath.'js'. DS .'jquery.min.js');
-    $document->addScript($getTemplatePath.'js'. DS .'jquery.mobile.customized.min.js');
-    $document->addScript($getTemplatePath.'js'. DS .'jquery.easing.1.3.js');
-    $document->addScript($getTemplatePath.'js'. DS .'camera.min.js');
-    $document->addScript($getTemplatePath.'js'. DS .'camera.settings.js.php');
+    $document->addScript($getTemplatePath.'js'. '/' .'jquery.min.js');
+    $document->addScript($getTemplatePath.'js'. '/' .'jquery.mobile.customized.min.js');
+    $document->addScript($getTemplatePath.'js'. '/' .'jquery.easing.1.3.js');
+    $document->addScript($getTemplatePath.'js'. '/' .'camera.min.js');
+    $document->addScript($getTemplatePath.'js'. '/' .'camera.settings.js.php');
     
-    $document->addStyleSheet($getTemplatePath.'css'. DS .'camera.css');
+    $document->addStyleSheet($getTemplatePath.'css'. '/' .'camera.css');
 
     $timthumbWidth = $pluginParams->get('twidth');
     $timthumbHeight = $pluginParams->get('theight');
     $timthumbQuality = $pluginParams->get('tquality');
-    $timthumbLink = $pluginLivePath. DS .'includes'. DS .'elements'. DS .'lib'. DS .'timthumb.php?';
+    $timthumbLink = $pluginLivePath. '/' .'includes'. '/' .'elements'. '/' .'lib'. '/' .'timthumb.php?';
 
     if($timthumbWidth != '')
         $timthumbLink .= 'w='.$timthumbWidth.'&';
@@ -42,7 +42,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
                 <div data-thumb="<?php echo $timthumbLink.'src='.JURI::root(true).$image; ?>" data-src="<?php echo JURI::root(true).$image; ?>">
                 <?php //if($imageDescriptions[$key] != ''): ?>
                     <div class="camera_caption">
-                        <strong><?php echo $imageTitles[$key]; ?></strong><br/><em><?php echo $imageDescriptions[$key]; ?></em>
+                        <strong><?php echo (isset($imageTitles[$key])) ? $imageTitles[$key]: ""; ?></strong><br/><em><?php echo (isset($imageDescriptions[$key])) ? $imageDescriptions[$key]: ""; ?></em>
                     </div>
                 <?php //endif; ?>
             </div>

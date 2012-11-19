@@ -11,26 +11,33 @@
 	defined( '_JEXEC' ) or die( 'Restricted access' ); 
     define( 'DS', DIRECTORY_SEPARATOR );
 	
-    $jpath_base = realpath(dirname(__FILE__).DS.'../../../../../../..' );
+    $jpath_base = realpath(dirname(__FILE__).'/'.'../../../../../../..' );
         
-	if(file_exists($jpath_base .DS.'includes')):
+	if(file_exists($jpath_base .'/'.'includes')):
 		define( 'JPATH_BASE', $jpath_base);
-		require_once ( $jpath_base .DS.'includes'.DS.'defines.php' );
-		require_once ( $jpath_base .DS.'includes'.DS.'framework.php' );
+		require_once ( $jpath_base .'/'.'includes'.'/'.'defines.php' );
+		require_once ( $jpath_base .'/'.'includes'.'/'.'framework.php' );
 	else:
-		$jpath_base = realpath(dirname(__FILE__).DS.'../../../../../..' );
+		$jpath_base = realpath(dirname(__FILE__).'/'.'../../../../../..' );
 		define( 'JPATH_BASE', $jpath_base);
-		require_once ( $jpath_base .DS.'includes'.DS.'defines.php' );
-		require_once ( $jpath_base .DS.'includes'.DS.'framework.php' );
+		require_once ( $jpath_base .'/'.'includes'.'/'.'defines.php' );
+		require_once ( $jpath_base .'/'.'includes'.'/'.'framework.php' );
 	endif;
 
     $mainframe = JFactory::getApplication('site');
     
-    jimport( 'joomla.html.parameter' );
-	jimport( 'joomla.plugin.helper' );
+    jimport( 'joomla.plugin.helper' );
     
     $plugin             =   &JPluginHelper::getPlugin('k2', 'incptvk2imagegallery');
-    $pluginParams       =   new JParameter($plugin->params);
+    if(version_compare(JVERSION,'3.0.0','ge'))
+	{
+		$pluginParams = new JRegistry();
+		$pluginParams->loadString($plugin->params, 'JSON');
+	}
+	else {
+		jimport( 'joomla.html.parameter' );
+		$pluginParams = new JParameter($plugin->params);    
+	}
     
     $alignment              = $pluginParams->get('cameraAlignment');
     $autoAdvance            = $pluginParams->get('cameraAutoAdvance');

@@ -13,6 +13,9 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 ?>
 
 <?php 
+	jimport('joomla.registry.registry');
+	jimport( 'joomla.filesystem.folder' );
+	
     if(version_compare(JVERSION,'1.6.0','ge')) {
             $pluginLivePath = JURI::root(true).'/plugins/k2/'.$this->pluginName.'/'.$this->pluginName;
     } else {
@@ -30,13 +33,21 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <?php 
 
     // Get timthumb parameters from plugin settings
-    $plugin = &JPluginHelper::getPlugin('k2', $this->pluginName);
-    $pluginParams = new JParameter($plugin->params);    
-    
-    $timthumbWidth = $pluginParams->get('twidth');
+    $plugin = &JPluginHelper::getPlugin('k2', $this->pluginName);    
+	
+	if(version_compare(JVERSION,'3.0.0','ge'))
+	{
+		$pluginParams = new JRegistry();
+		$pluginParams->loadString($plugin->params, 'JSON');
+	}
+	else {
+		$pluginParams = new JParameter($plugin->params);    
+	}
+	
+	$timthumbWidth = $pluginParams->get('twidth');
     $timthumbHeight = $pluginParams->get('theight');
     $timthumbQuality = $pluginParams->get('tquality');
-    $timthumbLink = $pluginLivePath. DS .'includes'. DS .'elements'. DS .'lib'. DS .'timthumb.php?';
+    $timthumbLink = $pluginLivePath. '/' .'includes'. '/' .'elements'. '/' .'lib'. '/' .'timthumb.php?';
     
     if($timthumbWidth != '')
         $timthumbLink .= 'w='.$timthumbWidth.'&';
@@ -65,7 +76,7 @@ endif; ?>
 
 <div id="imageGalleryParametersBox" class="imageGalleryParameters" style="<?php echo $style; ?>">
     <label for="imageGalleryParameters"><?php echo JText::_('PLG_K2_IG_IMAGE_GALLERY_PARAMETERS'); ?></label>
-    <select id="imageGalleryParameters" name="plugins[<?php echo $this->pluginName;?>IGParameters]">
+    <select id="imageGalleryParameters" name="plugins[<?php echo $this->pluginName;?>IGParameters]" style="width:200px;">
         <?php
             foreach($parameterOptions as $option):
                 if($igParameters == $option):
@@ -93,8 +104,8 @@ endif; ?>
         <fieldset>
             <legend><?php echo JText::_('PLG_K2_IG_CUSTOM_PARAMETERS_FIELDSET'); ?></legend>
             
-            <label for="k2IGposition"><?php echo JText::_('PLG_K2_IG_XML_POSITION'); ?></label>
-            <select name="plugins[<?php echo $this->pluginName;?>k2IGposition]" id="k2IGposition">
+            <label id="k2IGpositionLabel" for="k2IGposition"><?php echo JText::_('PLG_K2_IG_XML_POSITION'); ?></label>
+            <select name="plugins[<?php echo $this->pluginName;?>k2IGposition]" id="k2IGposition" style="width:200px;">
                 <option value="K2AfterDisplayContent" <?php if($k2IGposition == 'K2AfterDisplayContent'):echo 'selected="selected"';endif;?>><?php echo JText::_('PLG_K2_IG_XML_AFTER_DISPLAY_CONTENT'); ?></option>
                 <option value="K2BeforeDisplay" <?php if($k2IGposition == 'K2BeforeDisplay'):echo 'selected="selected"';endif;?>><?php echo JText::_('PLG_K2_IG_XML_BEFORE_DISPLAY'); ?></option>
                 <option value="K2AfterDisplay" <?php if($k2IGposition == 'K2AfterDisplay'):echo 'selected="selected"';endif;?>><?php echo JText::_('PLG_K2_IG_XML_AFTER_DISPLAY'); ?></option>                    
@@ -105,14 +116,14 @@ endif; ?>
             <br />
             
             <?php 
-                require_once(dirname(__FILE__).DS.'..'.DS.'helper.php');
+                require_once(dirname(__FILE__).'/'.'..'.'/'.'helper.php');
                 $getThemesPath = K2ImageGalleryHelper::getTemplatePath($this->pluginName,'','');
                 $themeFolders = JFolder::listFolderTree($getThemesPath->file,'',1,0,0);
             ?>
             
             <div id="themeParameters" class="<?php //echo $classSlider; ?>">
-                <label for="k2IGtheme"><?php echo JText::_('PLG_K2_IG_SELECTED_THEME'); ?></label>
-                <select name="plugins[<?php echo $this->pluginName;?>k2IGtheme]" id="k2IGtheme">
+                <label id="k2IGthemeLabel" for="k2IGtheme"><?php echo JText::_('PLG_K2_IG_SELECTED_THEME'); ?></label>
+                <select name="plugins[<?php echo $this->pluginName;?>k2IGtheme]" id="k2IGtheme" style="width:200px;">
                     <?php foreach($themeFolders as $themeFolder): ?>
                     <option value="<?php echo $themeFolder['name']; ?>" <?php if($k2IGtheme == $themeFolder['name']):echo 'selected="selected"';endif;?>><?php echo $themeFolder['name']; ?></option>
                     <?php endforeach; ?>
@@ -162,7 +173,7 @@ endif; ?>
                                         <input type="text" 
                                             name="plugins[<?php echo $this->pluginName;?>ImageTitles][]" 
                                             size="30" class="text_area" 
-                                            value="<?php echo $imageTitles[$key]; ?>" />
+                                            value="<?php echo (isset($imageTitles[$key])) ? $imageTitles[$key]: ""; ?>" />
                                 </td>
                         </tr>
                         <tr>
@@ -173,7 +184,7 @@ endif; ?>
                                         <input type="text" 
                                             name="plugins[<?php echo $this->pluginName;?>ImageDescriptions][]" 
                                             size="50" class="text_area" 
-                                            value="<?php echo $imageDescriptions[$key]; ?>" />
+                                            value="<?php echo (isset($imageDescriptions[$key])) ? $imageDescriptions[$key]: ""; ?>" />
                                 </td>
                         </tr>
                         <?php if (!empty($image)): ?>

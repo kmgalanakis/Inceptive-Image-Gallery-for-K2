@@ -11,26 +11,34 @@
 	defined( '_JEXEC' ) or die( 'Restricted access' ); 
     define( 'DS', DIRECTORY_SEPARATOR );
 	
-	$jpath_base = realpath(dirname(__FILE__).DS.'../../../../../../..' );
+	$jpath_base = realpath(dirname(__FILE__).'/'.'../../../../../../..' );
         
-	if(file_exists($jpath_base .DS.'includes')):
+	if(file_exists($jpath_base .'/'.'includes')):
 		define( 'JPATH_BASE', $jpath_base);
-		require_once ( $jpath_base .DS.'includes'.DS.'defines.php' );
-		require_once ( $jpath_base .DS.'includes'.DS.'framework.php' );
+		require_once ( $jpath_base .'/'.'includes'.'/'.'defines.php' );
+		require_once ( $jpath_base .'/'.'includes'.'/'.'framework.php' );
 	else:
-		$jpath_base = realpath(dirname(__FILE__).DS.'../../../../../..' );
+		$jpath_base = realpath(dirname(__FILE__).'/'.'../../../../../..' );
 		define( 'JPATH_BASE', $jpath_base);
-		require_once ( $jpath_base .DS.'includes'.DS.'defines.php' );
-		require_once ( $jpath_base .DS.'includes'.DS.'framework.php' );
+		require_once ( $jpath_base .'/'.'includes'.'/'.'defines.php' );
+		require_once ( $jpath_base .'/'.'includes'.'/'.'framework.php' );
 	endif;
 
     $mainframe = JFactory::getApplication('site');
     
-    jimport( 'joomla.html.parameter' );
 	jimport( 'joomla.plugin.helper' );
     
-    $plugin             =   &JPluginHelper::getPlugin('k2', 'incptvk2imagegallery');
-    $pluginParams       = new JParameter($plugin->params);
+	$plugin =   &JPluginHelper::getPlugin('k2', 'incptvk2imagegallery');
+    if(version_compare(JVERSION,'3.0.0','ge'))
+	{
+		$pluginParams = new JRegistry();
+		$pluginParams->loadString($plugin->params, 'JSON');
+	}
+	else {
+		jimport( 'joomla.html.parameter' );
+		$pluginParams = new JParameter($plugin->params);    
+	}
+	
     $effect             = $pluginParams->get('nivoEffect');
     $slices             = $pluginParams->get('nivoSlices');
     $boxCols            = $pluginParams->get('nivoBoxCols');
@@ -58,7 +66,7 @@ jQuery(window).load(function() {
         pauseTime: <?php echo $pauseTime; ?>, // How long each slide will show
         startSlide: 0, // Set starting Slide (0 index)
         directionNav: <?php if($directionNav && strtolower($directionNav) !== "false"):echo "true";else:echo "false";endif; ?>, // Next & Prev navigation
-        directionNavHide: <?php if($directionNavHide && strtolower($directionNavHide) !== "false"):echo "true";else:echo "false";endif; ?>, // Only show on hover
+        
         controlNav: <?php if($controlNav && strtolower($controlNav) !== "false"):echo "true";else:echo "false";endif; ?>, // 1,2,3... navigation
         controlNavThumbs: <?php if($controlNavThumbs && strtolower($controlNavThumbs) !== "false"):echo "true";else:echo "false";endif; ?>, // Use thumbnails for Control Nav
         pauseOnHover: <?php if($pauseOnHover && strtolower($pauseOnHover) !== "false"):echo "true";else:echo "false";endif; ?>, // Stop animation while hovering

@@ -24,7 +24,7 @@ fieldset li, ol#property-values li {
     font-weight: bold;
     text-align: right;
     font-size: 11px;
-    width: 155px;
+    width: 135px;
 }
 
 .image-preview {
@@ -195,3 +195,7 @@ a.removeImageButton {
 }
 
 .parameters-holder label { width : 200px; }
+
+#k2IGthemeLabel , #k2IGpositionLabel {float:left;}
+
+.ui-sortable { margin: 0;}
