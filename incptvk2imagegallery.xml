@@ -7,11 +7,11 @@
     <copyright>Copyright (c) 2006-2012 Inceptive GP. All rights reserved.</copyright>
     <creationDate>June 9, 2012</creationDate>
     <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
-    <version>1.0</version>
+    <version>1.1</version>
     <description>PLG_K2_IG_XML_DESC</description>
     
 	<updateservers>
-	   <server type="extension" priority="1" name="Inceptive K2 Image Gallery Updates">http://dev.inceptive.gr/update/update.xml</server>
+	   <server type="extension" priority="1" name="Inceptive Image Gallery for K2 Updates">http://extend.inceptive.gr/update/update.xml</server>
 	</updateservers>
     <files>
 		<filename>index.html</filename>
