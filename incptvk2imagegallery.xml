@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<install version="1.5" type="plugin" group="k2" method="upgrade">
+<extension version="1.5" type="plugin" group="k2" method="upgrade">
     <name>Inceptive Image Gallery for K2</name>
     <author>Inceptive</author>
     <authorEmail>info@inceptive.gr</authorEmail>
@@ -1172,4 +1172,4 @@
     <fields group="item-gallery" addfieldpath="/plugins/k2/incptvk2imagegallery/incptvk2imagegallery/includes/elements">
         <field name="incptvk2imagegallery" type="incptvk2imagegallery" default="" label="" description="" /><!-- <<< Notice the param name -->
     </fields>
-</install>
+</extension>
