@@ -1,0 +1,206 @@
+.paramlist_value { width: 730px; }
+
+fieldset input,
+fieldset textarea,
+fieldset select,
+fieldset img,
+fieldset button {
+    float: none;
+    width: auto;
+    margin: 0 0 0 5px;
+    font-size: 0.909em;
+    padding: 4px;
+}
+
+fieldset li, ol#property-values li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.key_label {
+    background: #dddddd;
+    color: #666;
+    font-weight: bold;
+    text-align: right;
+    font-size: 11px;
+    width: 135px;
+}
+
+.image-preview {
+    float: right;
+    padding-bottom: 5px;
+}
+
+.image-preview .key_label {
+    float: left;
+    font-size: 1.091em;
+}
+
+.image-holder {
+    width:730px;
+    margin: 10px 0;
+    padding: 5px;
+    background-color: #dddddd;
+    border-color: #c4c4c4;
+    border-width: 1px;
+    border-style: solid;
+    overflow: hidden;
+}
+
+.image-holder .admintable {
+    width: 100%;
+}
+
+.image-holder .text_area {
+    float:left;
+}
+
+input.myK2ImageBrowseServer {
+    background: #EEE;
+}
+
+input.myK2ImageBrowseServer:hover {
+    background: ivory;
+    cursor: pointer;
+}
+
+a.addImageButton {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.removeImageButton {
+    color: #FFFFFF;
+    text-decoration: none;
+    float: right;
+}
+
+.addImageButton {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b6d14c), color-stop(100%,#83a01c));
+    background: -moz-linear-gradient(center top, #b6d14c 0%, #83a01c 100%);
+    -webkit-box-shadow: 0px 1px 0px 0px #d1f25a inset, 0px -1px 0px 0px #99bc27 inset, 0px 2px 2px 0px #d4d4d4;
+    -moz-box-shadow: 0px 1px 0px 0px #d1f25a inset, 0px -1px 0px 0px #99bc27 inset, 0px 2px 2px 0px #d4d4d4;
+    box-shadow: 0px 1px 0px 0px #d1f25a inset, 0px -1px 0px 0px #99bc27 inset, 0px 2px 2px 0px #d4d4d4;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-shadow: 0px 1px 0px #789b1f;
+    padding: 8px 10px;
+    display: block;
+    border-color: #97b134;
+    border-width: 1px;
+    border-style: solid;
+    font-family: Arial;
+    font-size: 13px;
+    color: #FFFFFF;
+}
+.addImageButton:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bbda4c), color-stop(100%,#83a01d));
+    background: -moz-linear-gradient(center top, #bbda4c 0%, #83a01d 100%);
+}
+.addImageButton:active {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#83a01d), color-stop(100%,#a7c248));
+    background: -moz-linear-gradient(center top, #83a01d 0%, #a7c248 100%);
+    -webkit-box-shadow: 0px 1px 0px 0px #a3c229 inset;
+    -moz-box-shadow: 0px 1px 0px 0px #a3c229 inset;
+    box-shadow: 0px 1px 0px 0px #a3c229 inset;
+}
+
+.removeImageButton {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E80000), color-stop(100%,#9C0000));
+    background: -moz-linear-gradient(center top, #E80000 0%, #9C0000 100%);
+    -webkit-box-shadow: 0px 1px 0px 0px maroon inset, 0px -1px 0px 0px #AD4B4B inset, 0px 2px 2px 0px #ADADAD;
+    -moz-box-shadow: 0px 1px 0px 0px #800000 inset, 0px -1px 0px 0px #ad4b4b inset, 0px 2px 2px 0px #adadad;
+    box-shadow: 0px 1px 0px 0px maroon inset, 0px -1px 0px 0px #AD4B4B inset, 0px 2px 2px 0px #ADADAD;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-shadow: 0px 1px 0px #242424;
+    padding: 8px 10px;
+    display: block;
+    font-family: Arial;
+    font-size: 13px;
+    color: white;
+    margin: 0 5px 5px 0;
+}
+.removeImageButton:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff0000), color-stop(100%,#9c0000));
+    background: -moz-linear-gradient(center top, #ff0000 0%, #9c0000 100%);
+}
+.removeImageButton:active {
+    -webkit-box-shadow: 0px 1px 0px 0px #6e006e inset;
+    -moz-box-shadow: 0px 1px 0px 0px #6e006e inset;
+    box-shadow: 0px 1px 0px 0px #6e006e inset;
+}
+
+.imageGalleryParameters {
+    float:right;
+}
+
+#customParameters {
+    display: none;
+}
+
+#customParameters.customParametersVisible {
+    display: block;
+}
+
+#sliderParameters {
+    display: none;
+}
+
+#sliderParameters.layoutParametersVisible {
+    display: block;
+}
+
+#galleryParameters {
+    display: none;
+}
+
+#galleryParameters.layoutParametersVisible {
+    display: block;
+}
+
+.parameters-holder {
+    width: 730px;
+    margin: 10px 0;
+    padding: 5px;
+    background-color: #DDD;
+    border-color: #C4C4C4;
+    border-width: 1px;
+    border-style: solid;
+    overflow: hidden;
+}
+
+.info-holder {
+    width: 730px;
+	padding-bottom: 10px;
+}
+
+.info, .success, .warning, .error {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 20px 15px 55px;	
+    font: bold 12px verdana;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px #888;
+    box-shadow: 0 0 5px #888;
+    text-shadow: 2px 2px 2px #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    display: block;
+}
+
+.info {
+    color: #00529B;
+    background: #BDE5F8 url('../media/icon-info.png') no-repeat 10px center;
+}
+
+.parameters-holder label { width : 200px; }
+
+#k2IGthemeLabel , #k2IGpositionLabel {float:left;}
+
+.ui-sortable { margin: 0;}

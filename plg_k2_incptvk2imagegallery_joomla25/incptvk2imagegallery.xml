@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="k2" method="upgrade">
+    <name>Inceptive Image Gallery for K2</name>
+    <author>Inceptive</author>
+    <authorEmail>info@inceptive.gr</authorEmail>
+    <authorUrl>www.inceptive.gr</authorUrl>
+    <copyright>Copyright (c) 2006-2012 Inceptive GP. All rights reserved.</copyright>
+    <creationDate>June 9, 2012</creationDate>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>1.1</version>
+    <description>PLG_K2_IG_XML_DESC</description>
+    
+	<updateservers>
+	   <server type="extension" priority="1" name="Inceptive Image Gallery for K2 Updates">http://extend.inceptive.gr/update/update.xml</server>
+	</updateservers>
+    <files>
+		<filename>index.html</filename>
+        <filename plugin="incptvk2imagegallery">incptvk2imagegallery.php</filename>
+        <folder>incptvk2imagegallery</folder>
+        <folder>language</folder>
+    </files>
+    
+    <languages folder="language/en-GB">
+        <language tag="en-GB">en-GB.plg_k2_incptvk2imagegallery.ini</language>
+        <language tag="en-GB">en-GB.plg_k2_incptvk2imagegallery.sys.ini</language>
+    </languages>
+    
+	<!-- Joomla! 1.6+ plugin parameters -->
+    <config>
+        <fields name="params" addfieldpath="/plugins/k2/incptvk2imagegallery/incptvk2imagegallery/includes/elements">
+            <fieldset name="basic" >
+                <field name="" type="header" default="PLG_K2_IG_XML_GLOBAL_PARAMETERS" label="" description="" />
+                <field name="k2IGposition" type="list" default="K2AfterDisplayContent" label="PLG_K2_IG_XML_POSITION" description="PLG_K2_IG_XML_POSITION_BASED_ON_K2_EVENTS_POSITION_ON_ITEM_TEMPLATE">
+                    <option value="K2BeforeDisplay">PLG_K2_IG_XML_BEFORE_DISPLAY</option>
+                    <option value="K2AfterDisplay">PLG_K2_IG_XML_AFTER_DISPLAY</option>                    
+                    <!-- <option value="K2BeforeDisplayTitle">PLG_K2_IG_XML_BEFORE_DISPLAY_TITLE</option> 
+                    <option value="K2AfterDisplayTitle">PLG_K2_IG_XML_AFTER_DISPLAY_TITLE</option> -->
+                    <option value="K2BeforeDisplayContent">PLG_K2_IG_XML_BEFORE_DISPLAY_CONTENT</option>
+                    <option value="K2AfterDisplayContent">PLG_K2_IG_XML_AFTER_DISPLAY_CONTENT</option>
+                </field>
+                <field name="defaultTheme" type="folderlist" label="PLG_K2_IG_XML_DEFAULT_THEME" description="PLG_K2_IG_XML_DEFAULT_THEME_DESCRIPTION" default="Nivo" directory="/plugins/k2/incptvk2imagegallery/incptvk2imagegallery/tmpl" hide_default="true" hide_none="true" />
+                <field name="" type="header" default="PLG_K2_IG_XML_TIMTHUMB_PARAMETERS_ADMINISTRATOR" label="" description="" />
+                <field  name="twidth" type="text" default="120" size="4" 
+                        label="PLG_K2_IG_XML_TIMTHUMB_WIDTH" 
+                        description="PLG_K2_IG_XML_THE_PRESELECTED_WIDTH_OF_THE_THUMBNAIL_IN_PIXELS_LEAVE_BLANK_TO_OMMIT_WIDTH_PARAMETER_IN_TIMTHUMB" />
+                <field  name="theight" type="text" default="" size="4" 
+                        label="PLG_K2_IG_XML_TIMTHUMB_HEIGHT" 
+                        description="PLG_K2_IG_XML_THE_PRESELECTED_HEIGHT_OF_THE_THUMBNAIL_IN_PIXELS_LEAVE_BLANK_TO_OMMIT_WIDTH_PARAMETER_IN_TIMTHUMB" />
+                <field  name="tquality" type="list" default="60" label="PLG_K2_IG_XML_TIMTHUMB_QUALITY" 
+                        description="PLG_K2_IG_XML_THE_PRESELECTED_QUALITY_OF_THE_THUMBNAIL_IN_PERCENT_LEAVE_BLANK_TO_OMMIT_WIDTH_PARAMETER_IN_TIMTHUMB">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                    <option value="60">60</option>
+                    <option value="70">70</option>
+                    <option value="80">80</option>
+                    <option value="90">90</option>
+                    <option value="100">100</option>
+                </field>    
+            </fieldset>
+            <fieldset name="nivo-settings" label="PLG_K2_IG_XML_NIVO_SLIDER_SETTINGS">
+                <field name="" type="header" default="PLG_K2_IG_XML_NIVO_SLIDER_SETTINGS" label="" description="" />
+                <field  name="nivoEffect" type="list" default="random" label="PLG_K2_IG_XML_NIVO_EFFECT" 
+                        description="PLG_K2_IG_XML_NIVO_EFFECT_CHOOSE_BETWEEN_NIVO_SLIDER_EFFECTS">
+                    <option value="random">random</option>
+                    <option value="sliceDown">sliceDown</option>
+                    <option value="sliceDownLeft">sliceDownLeft</option>
+                    <option value="sliceUp">sliceUp</option>
+                    <option value="sliceUpLeft">sliceUpLeft</option>
+                    <option value="sliceUpDown">sliceUpDown</option>
+                    <option value="sliceUpDownLeft">sliceUpDownLeft</option>
+                    <option value="fold">fold</option>
+                    <option value="fade">fade</option>
+                    <option value="slideInRight">slideInRight</option>
+                    <option value="slideInLeft">slideInLeft</option>
+                    <option value="boxRandom">boxRandom</option>
+                    <option value="boxRain">boxRain</option>
+                    <option value="boxRainReverse">boxRainReverse</option>
+                    <option value="boxRainGrow">boxRainGrow</option>
+                    <option value="boxRainGrowReverse">boxRainGrowReverse</option>
+                </field>
+                <field name="nivoSlices" type="integer" default="15" label="PLG_K2_IG_XML_NIVO_SLICES" description="PLG_K2_IG_XML_NIVO_NUMBER_OF_SLICES_FOR_SLICE_EFFECTS" first="1" last="50" step="1" />
+                <field name="nivoBoxCols" type="integer" default="8" label="PLG_K2_IG_XML_NIVO_BOX_COLUMNS" description="PLG_K2_IG_XML_NIVO_NUMBER_OF_BOX_COLUMNS_FOR_BOX_EFFECTS" first="1" last="50" step="1" />
+                <field name="nivoBoxRows" type="integer" default="4" label="PLG_K2_IG_XML_NIVO_BOX_ROWS" description="PLG_K2_IG_XML_NIVO_NUMBER_OF_BOX_ROWS_FOR_BOX_EFFECTS" first="1" last="50" step="1" />
+                <field name="nivoAnimSpeed" type="integer" default="500" label="PLG_K2_IG_XML_NIVO_ANIMATION_SPEED" description="PLG_K2_IG_XML_NIVO_SLIDE_TRANSITION_SPEED" first="100" last="1000" step="100" />
+                <field name="nivoPauseTime" type="integer" default="3000" label="PLG_K2_IG_XML_NIVO_PAUSE_TIME" description="PLG_K2_IG_XML_NIVO_HOW_LONG_EACH_SLIDE_WILL_SHOW" first="1000" last="10000" step="500" />
+                <field  name="nivoDirectionNav" type="list" default="true" label="PLG_K2_IG_XML_NIVO_DIRECTION_NAVIGATION" 
+                        description="PLG_K2_IG_XML_NIVO_SHOW_NEXT_AND_PREVIOUS_NAVIGATION">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="nivoDirectionNavHide" type="list" default="true" label="PLG_K2_IG_XML_NIVO_DIRECTION_NAVIGATION_HIDE" 
+                        description="PLG_K2_IG_XML_NIVO_ONLY_SHOW_NEXT_AND_PREVIOUS_NAVIGATION_ON_HOVER">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="nivoControlNav" type="list" default="true" label="PLG_K2_IG_XML_NIVO_CONTROL_NAVIGATION" 
+                        description="PLG_K2_IG_XML_NIVO_1_2_3_NAVIGATION">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="nivoControlNavThumbs" type="list" default="false" label="PLG_K2_IG_XML_NIVO_CONTROL_NAVIGATION_THUMBS" 
+                        description="PLG_K2_IG_XML_NIVO_USE_THUMBNAILS_FOR_CONTROL_NAVIGATION">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="nivoPauseOnHover" type="list" default="true" label="PLG_K2_IG_XML_NIVO_PAUSE_ON_HOVER" 
+                        description="PLG_K2_IG_XML_NIVO_STOP_ANIMATION_WHILE_HOVERING">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="nivoManualAdvance" type="list" default="false" label="PLG_K2_IG_XML_NIVO_MANUAL_ADVANCE" 
+                        description="PLG_K2_IG_XML_NIVO_FORCE_MANUAL_TRANSITIONS">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="nivoPrevText" type="text" default="Prev" size="10" label="PLG_K2_IG_NIVO_PREVIOUS_TEXT" description="PLG_K2_IG_NIVO_PREV_DIRECTIONNAV_TEXT" />
+                <field  name="nivoNextText" type="text" default="Next" size="10" label="PLG_K2_IG_NIVO_NEXT_TEXT" description="PLG_K2_IG_NIVO_NEXT_DIRECTIONNAV_TEXT" />
+                <field  name="nivoRandomStart" type="list" default="false" label="PLG_K2_IG_XML_NIVO_RANDOM_START"  
+                        description="PLG_K2_IG_XML_NIVO_START_ON_A_RANDOM_SLIDE">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+            </fieldset>
+            
+            <fieldset name="camera-settings" label="PLG_K2_IG_XML_CAMERA_SLIDESHOW_SETTINGS">
+                <field name="" type="header" default="PLG_K2_IG_XML_CAMERA_SLIDESHOW_SETTINGS" label="" description="" />
+                <field  name="cameraAlignment" type="list" default="center" label="PLG_K2_IG_XML_CAMERA_ALIGNMENT" 
+                        description="PLG_K2_IG_XML_CAMERA_ALIGNMENT_DESC">
+                    <option value="topLeft">topLeft</option>
+                    <option value="topCenter">topCenter</option>
+                    <option value="centerLeft">centerLeft</option>
+                    <option value="center">center</option>
+                    <option value="centerRight">centerRight</option>
+                    <option value="bottomLeft">bottomLeft</option>
+                    <option value="bottomCenter">bottomCenter</option>
+                    <option value="bottomRight">bottomRight</option>
+                </field>
+                <field  name="cameraAutoAdvance" type="list" default="true" label="PLG_K2_IG_XML_CAMERA_AUTO_ADVANCE"  
+                        description="PLG_K2_IG_XML_CAMERA_AUTO_ADVANCE_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="cameraMobileAutoAdvance" type="list" default="true" label="PLG_K2_IG_XML_CAMERA_MOBILE_AUTO_ADVANCE"  
+                        description="PLG_K2_IG_XML_CAMERA_MOBILE_AUTO_ADVANCE_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="cameraBarDirection" type="list" default="center" label="PLG_K2_IG_XML_CAMERA_BAR_DIRECTION" 
+                        description="PLG_K2_IG_XML_CAMERA_BAR_DIRECTION_DESC">
+                    <option value="leftToRight">leftToRight</option>
+                    <option value="rightToLeft">rightToLeft</option>
+                    <option value="topToBottom">topToBottom</option>
+                    <option value="bottomToTop">bottomToTop</option>
+                </field>
+                <field  name="cameraBarPosition" type="list" default="bottom" label="PLG_K2_IG_XML_CAMERA_BAR_POSITION" 
+                        description="PLG_K2_IG_XML_CAMERA_BAR_POSITION_DESC">
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="top">top</option>
+                    <option value="bottom">bottom</option>
+                </field>
+                <field name="cameraCols" type="integer" default="8" label="PLG_K2_IG_XML_CAMERA_COLS" 
+                        description="PLG_K2_IG_XML_CAMERA_COLS_DESC" first="1" last="30" step="1" />
+                <field  name="cameraEasing" type="list" default="easeInOutExpo" label="PLG_K2_IG_XML_CAMERA_EASING" 
+                        description="PLG_K2_IG_XML_CAMERA_EASING_DESC">
+                    <option value="linear">linear</option>
+                    <option value="swing">swing</option>
+                    <option value="easeInQuad">easeInQuad</option>
+                    <option value="easeOutQuad">easeOutQuad</option>
+                    <option value="easeInOutQuad">easeInOutQuad</option>
+                    <option value="easeInCubic">easeInCubic</option>
+                    <option value="easeOutCubic">easeOutCubic</option>
+                    <option value="easeInOutCubic">easeInOutCubic</option>                    
+                    <option value="easeInQuart">easeInQuart</option>
+                    <option value="easeOutQuart">easeOutQuart</option>
+                    <option value="easeInOutQuart">easeInOutQuart</option>
+                    <option value="easeInQuint">easeInQuint</option>
+                    <option value="easeOutQuint">easeOutQuint</option>
+                    <option value="easeInOutQuint">easeInOutQuint</option>
+                    <option value="easeInExpo">easeInExpo</option>
+                    <option value="easeOutExpo">easeOutExpo</option>
+                    <option value="easeInOutExpo">easeInOutExpo</option>
+                    <option value="easeInSine">easeInSine</option>
+                    <option value="easeOutSine">easeOutSine</option>
+                    <option value="easeInOutSine">easeInOutSine</option>
+                    <option value="easeInCirc">easeInCirc</option>
+                    <option value="easeOutCirc">easeOutCirc</option>
+                    <option value="easeInOutCirc">easeInOutCirc</option>
+                    <option value="easeInElastic">easeInElastic</option>
+                    <option value="easeOutElastic">easeOutElastic</option>
+                    <option value="easeInOutElastic">easeInOutElastic</option>
+                    <option value="easeInBack">easeInBack</option>
+                    <option value="easeOutBack">easeOutBack</option>
+                    <option value="easeInOutBack">easeInOutBack</option>
+                    <option value="easeInBounce">easeInBounce</option>
+                    <option value="easeOutBounce">easeOutBounce</option>
+                    <option value="easeInOutBounce">easeInOutBounce</option>
+                </field>
+                <field  name="cameraMobileEasing" type="list" default="easeInOutExpo" label="PLG_K2_IG_XML_CAMERA_MOBILE_EASING" 
+                        description="PLG_K2_IG_XML_CAMERA_MOBILE_EASING_DESC">
+                    <option value="linear">linear</option>
+                    <option value="swing">swing</option>
+                    <option value="easeInQuad">easeInQuad</option>
+                    <option value="easeOutQuad">easeOutQuad</option>
+                    <option value="easeInOutQuad">easeInOutQuad</option>
+                    <option value="easeInCubic">easeInCubic</option>
+                    <option value="easeOutCubic">easeOutCubic</option>
+                    <option value="easeInOutCubic">easeInOutCubic</option>                    
+                    <option value="easeInQuart">easeInQuart</option>
+                    <option value="easeOutQuart">easeOutQuart</option>
+                    <option value="easeInOutQuart">easeInOutQuart</option>
+                    <option value="easeInQuint">easeInQuint</option>
+                    <option value="easeOutQuint">easeOutQuint</option>
+                    <option value="easeInOutQuint">easeInOutQuint</option>
+                    <option value="easeInExpo">easeInExpo</option>
+                    <option value="easeOutExpo">easeOutExpo</option>
+                    <option value="easeInOutExpo">easeInOutExpo</option>
+                    <option value="easeInSine">easeInSine</option>
+                    <option value="easeOutSine">easeOutSine</option>
+                    <option value="easeInOutSine">easeInOutSine</option>
+                    <option value="easeInCirc">easeInCirc</option>
+                    <option value="easeOutCirc">easeOutCirc</option>
+                    <option value="easeInOutCirc">easeInOutCirc</option>
+                    <option value="easeInElastic">easeInElastic</option>
+                    <option value="easeOutElastic">easeOutElastic</option>
+                    <option value="easeInOutElastic">easeInOutElastic</option>
+                    <option value="easeInBack">easeInBack</option>
+                    <option value="easeOutBack">easeOutBack</option>
+                    <option value="easeInOutBack">easeInOutBack</option>
+                    <option value="easeInBounce">easeInBounce</option>
+                    <option value="easeOutBounce">easeOutBounce</option>
+                    <option value="easeInOutBounce">easeInOutBounce</option>
+                </field>
+                <field  name="cameraFx" type="list" default="random" label="PLG_K2_IG_XML_CAMERA_FX" 
+                        description="PLG_K2_IG_XML_CAMERA_FX_DESC">
+                    <option value="random">random</option>
+                    <option value="simpleFade">simpleFade</option>
+                    <option value="curtainTopLeft">curtainTopLeft</option>
+                    <option value="curtainTopRight">curtainTopRight</option>
+                    <option value="curtainBottomLeft">curtainBottomLeft</option>
+                    <option value="curtainBottomRight">curtainBottomRight</option>
+                    <option value="curtainSliceLeft">curtainSliceLeft</option>
+                    <option value="curtainSliceRight">curtainSliceRight</option>
+                    <option value="blindCurtainTopLeft">blindCurtainTopLeft</option>
+                    <option value="blindCurtainTopRight">blindCurtainTopRight</option>
+                    <option value="blindCurtainBottomLeft">blindCurtainBottomLeft</option>
+                    <option value="blindCurtainBottomRight">blindCurtainBottomRight</option>
+                    <option value="blindCurtainSliceBottom">blindCurtainSliceBottom</option>
+                    <option value="blindCurtainSliceTop">blindCurtainSliceTop</option>
+                    <option value="stampede">stampede</option>
+                    <option value="mosaic">mosaic</option>
+                    <option value="mosaicReverse">mosaicReverse</option>
+                    <option value="mosaicRandom">mosaicRandom</option>
+                    <option value="mosaicSpiral">mosaicSpiral</option>
+                    <option value="mosaicSpiralReverse">mosaicSpiralReverse</option>
+                    <option value="topLeftBottomRight">topLeftBottomRight</option>
+                    <option value="bottomRightTopLeft">bottomRightTopLeft</option>
+                    <option value="bottomLeftTopRight">bottomLeftTopRight</option>
+                    <option value="bottomLeftTopRight">bottomLeftTopRight</option>
+                    <option value="scrollLeft">scrollLeft</option>
+                    <option value="scrollRight">scrollRight</option>
+                    <option value="scrollHorz">scrollHorz</option>
+                    <option value="scrollBottom">scrollBottom</option>
+                    <option value="scrollTop">scrollTop</option>
+                </field>
+                <field  name="cameraMobileFx" type="list" default="random" label="PLG_K2_IG_XML_CAMERA_MOBILE_FX" 
+                        description="PLG_K2_IG_XML_CAMERA_MOBILE_FX_DESC">
+                    <option value="random">random</option>
+                    <option value="simpleFade">simpleFade</option>
+                    <option value="curtainTopLeft">curtainTopLeft</option>
+                    <option value="curtainTopRight">curtainTopRight</option>
+                    <option value="curtainBottomLeft">curtainBottomLeft</option>
+                    <option value="curtainBottomRight">curtainBottomRight</option>
+                    <option value="curtainSliceLeft">curtainSliceLeft</option>
+                    <option value="curtainSliceRight">curtainSliceRight</option>
+                    <option value="blindCurtainTopLeft">blindCurtainTopLeft</option>
+                    <option value="blindCurtainTopRight">blindCurtainTopRight</option>
+                    <option value="blindCurtainBottomLeft">blindCurtainBottomLeft</option>
+                    <option value="blindCurtainBottomRight">blindCurtainBottomRight</option>
+                    <option value="blindCurtainSliceBottom">blindCurtainSliceBottom</option>
+                    <option value="blindCurtainSliceTop">blindCurtainSliceTop</option>
+                    <option value="stampede">stampede</option>
+                    <option value="mosaic">mosaic</option>
+                    <option value="mosaicReverse">mosaicReverse</option>
+                    <option value="mosaicRandom">mosaicRandom</option>
+                    <option value="mosaicSpiral">mosaicSpiral</option>
+                    <option value="mosaicSpiralReverse">mosaicSpiralReverse</option>
+                    <option value="topLeftBottomRight">topLeftBottomRight</option>
+                    <option value="bottomRightTopLeft">bottomRightTopLeft</option>
+                    <option value="bottomLeftTopRight">bottomLeftTopRight</option>
+                    <option value="bottomLeftTopRight">bottomLeftTopRight</option>
+                    <option value="scrollLeft">scrollLeft</option>
+                    <option value="scrollRight">scrollRight</option>
+                    <option value="scrollHorz">scrollHorz</option>
+                    <option value="scrollBottom">scrollBottom</option>
+                    <option value="scrollTop">scrollTop</option>
+                </field>
+                <field name="cameraGridDifference" type="integer" default="250" label="PLG_K2_IG_XML_CAMERA_GRID_DIFFERENCE" 
+                        description="PLG_K2_IG_XML_CAMERA_GRID_DIFFERENCE_DESC" first="100" last="1000" step="50" />
+                <field  name="cameraHeight" type="text" default="400px" size="4" 
+                        label="PLG_K2_IG_XML_CAMERA_HEIGHT" 
+                        description="PLG_K2_IG_XML_CAMERA_HEIGHT_DESC" />
+                <field  name="cameraHover" type="list" default="true" label="PLG_K2_IG_XML_CAMERA_HOVER"  
+                        description="PLG_K2_IG_XML_CAMERA_HOVER_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="cameraLoader" type="list" default="true" label="PLG_K2_IG_XML_CAMERA_LOADER"  
+                        description="PLG_K2_IG_XML_CAMERA_LOADER_DESC">
+                    <option value="pie">pie</option>
+                    <option value="bar">bar</option>
+                    <option value="none">none</option>                    
+                </field>
+                <field  name="cameraLoaderColor" type="text" default="#eeeeee" size="10" 
+                        label="PLG_K2_IG_XML_CAMERA_LOADER_COLOR" 
+                        description="PLG_K2_IG_XML_CAMERA_LOADER_COLOR_DESC" />
+                <field  name="cameraLoaderBgColor" type="text" default="#222222" size="10" 
+                        label="PLG_K2_IG_XML_CAMERA_LOADER_BG_COLOR" 
+                        description="PLG_K2_IG_XML_CAMERA_LOADER_COLOR_BG_DESC" />
+                <field  name="cameraLoaderOpacity" type="list" default=".8" label="PLG_K2_IG_XML_CAMERA_LOADER_OPACITY"  
+                        description="PLG_K2_IG_XML_CAMERA_LOADER_OPACITY_DESC">
+                    <option value=".1">0.1</option>
+                    <option value=".2">0.2</option>
+                    <option value=".3">0.3</option>
+                    <option value=".4">0.4</option>
+                    <option value=".5">0.5</option>
+                    <option value=".6">0.6</option>
+                    <option value=".7">0.7</option>
+                    <option value=".8">0.8</option>
+                    <option value=".9">0.9</option>
+                    <option value="1">1</option>
+                </field>
+                <field  name="cameraLoaderPadding" type="text" default="2" size="4" 
+                        label="PLG_K2_IG_XML_CAMERA_LOADER_PADDING" 
+                        description="PLG_K2_IG_XML_CAMERA_LOADER_PADDING_DESC" />
+                <field  name="cameraLoaderStroke" type="text" default="7" size="4" 
+                        label="PLG_K2_IG_XML_CAMERA_LOADER_STROKE" 
+                        description="PLG_K2_IG_XML_CAMERA_LOADER_STROKE_DESC" />
+                <field  name="cameraMinHeight" type="text" default="200px" size="4" 
+                        label="PLG_K2_IG_XML_CAMERA_MINHEIGHT" 
+                        description="PLG_K2_IG_XML_CAMERA_MINHEIGHT_DESC" />
+                <field  name="cameraNavigation" type="list" default="true" label="PLG_K2_IG_XML_CAMERA_NAVIGATION"  
+                        description="PLG_K2_IG_XML_CAMERA_NAVIGATION_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="cameraNavigationHover" type="list" default="true" label="PLG_K2_IG_XML_CAMERA_NAVIGATION_HOVER"  
+                        description="PLG_K2_IG_XML_CAMERA_NAVIGATION_HOVER_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="cameraMobileNavHover" type="list" default="true" label="PLG_K2_IG_XML_CAMERA_MOBILE_NAV_HOVER"  
+                        description="PLG_K2_IG_XML_CAMERA_MOBILE_NAV_HOVER_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="cameraOpacityOnGrid" type="list" default="false" label="PLG_K2_IG_XML_CAMERA_OPACITY_ON_GRID"  
+                        description="PLG_K2_IG_XML_CAMERA_OPACITY_ON_GRID_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="cameraOverlayer" type="list" default="true" label="PLG_K2_IG_XML_CAMERA_OVERLAYER"  
+                        description="PLG_K2_IG_XML_CAMERA_OVERLAYER_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="cameraPagination" type="list" default="true" label="PLG_K2_IG_XML_CAMERA_PAGINATION"  
+                        description="PLG_K2_IG_XML_CAMERA_PAGINATION_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="cameraPlayPause" type="list" default="true" label="PLG_K2_IG_XML_CAMERA_PLAY_PAUSE"  
+                        description="PLG_K2_IG_XML_CAMERA_PLAY_PAUSE_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="cameraPauseOnClick" type="list" default="true" label="PLG_K2_IG_XML_CAMERA_PAUSE_ON_CLICK"  
+                        description="PLG_K2_IG_XML_CAMERA_PAUSE_ON_CLICK_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field  name="cameraPiePosition" type="list" default="rightTop" label="PLG_K2_IG_XML_CAMERA_PIE_POSITION"  
+                        description="PLG_K2_IG_XML_CAMERA_PIE_POSITION_DESC">
+                    <option value="rightTop">rightTop</option>
+                    <option value="leftTop">leftTop</option>
+                    <option value="leftBottom">leftBottom</option>
+                    <option value="rightBottom">rightBottom</option>
+                </field>
+                <field  name="cameraPortrait" type="list" default="false" label="PLG_K2_IG_XML_CAMERA_PORTRAIT"  
+                        description="PLG_K2_IG_XML_CAMERA_PORTRAIT_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field name="cameraRows" type="integer" default="4" label="PLG_K2_IG_XML_CAMERA_ROWS" 
+                        description="PLG_K2_IG_XML_CAMERA_ROWS_DESC" first="1" last="30" step="1" />
+                <field name="cameraSlicedCols" type="integer" default="12" label="PLG_K2_IG_XML_CAMERA_SLICED_COLS" 
+                        description="PLG_K2_IG_XML_CAMERA_SLICED_COLS_DESC" first="0" last="30" step="1" />
+                <field name="cameraSlicedRows" type="integer" default="8" label="PLG_K2_IG_XML_CAMERA_SLICED_ROWS" 
+                        description="PLG_K2_IG_XML_CAMERA_SLICED_ROWS_DESC" first="0" last="30" step="1" />
+                <field  name="cameraSlideOn" type="list" default="random" label="PLG_K2_IG_XML_CAMERA_SLIDE_ON"  
+                        description="PLG_K2_IG_XML_CAMERA_SLIDE_ON_DESC">
+                    <option value="next">next</option>
+                    <option value="prev">prev</option>
+                    <option value="random">random</option>
+                </field>
+                <field  name="cameraThumbnails" type="list" default="false" label="PLG_K2_IG_XML_CAMERA_THUMBNAILS"  
+                        description="PLG_K2_IG_XML_CAMERA_THUMBNAILS_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
+                <field name="cameraTime" type="integer" default="3000" label="PLG_K2_IG_XML_CAMERA_TIME" description="PLG_K2_IG_XML_CAMERA_TIME_DESC" first="1000" last="10000" step="500" />
+                <field name="cameraTransPeriod" type="integer" default="1500" label="PLG_K2_IG_XML_CAMERA_TRANS_PERIOD" description="PLG_K2_IG_XML_CAMERA_TRANS_PERIOD_DESC" first="500" last="5000" step="500" />
+            </fieldset>
+        </fields>
+    </config>
+    
+    <!-- K2 backend field parameters Joomla 1.5 -->
+    <params group="item-gallery" addPath="/plugins/k2/incptvk2imagegallery/incptvk2imagegallery/includes/elements">
+        <param name="incptvk2imagegallery" type="incptvk2imagegallery" default="" label="" description="" /><!-- <<< Notice the param name -->
+    </params>
+	
+	<!-- K2 backend field parameters Joomla greater or equal 1.6-->
+    <fields group="item-gallery" addfieldpath="/plugins/k2/incptvk2imagegallery/incptvk2imagegallery/includes/elements">
+        <field name="incptvk2imagegallery" type="incptvk2imagegallery" default="" label="" description="" /><!-- <<< Notice the param name -->
+    </fields>
+</extension>
