@@ -17,6 +17,7 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
 {
     // K2 plugin name. Used to namespace parameters.
     var $pluginName = 'incptvk2imagegallery';
+	var $pluginType = 'k2';
     
     // K2 human readable plugin name. This the title of the plugin users see in K2 form.
     var $pluginNameHumanReadable = 'Inceptive Image Gallery for K2';
@@ -26,13 +27,13 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
 
     // Constructor
     public function __construct(&$subject, $config)
-    {   
+    {
         // Construct
         parent::__construct($subject, $config);
         // Load plugin language
         
 		$lang = &JFactory::getLanguage();
-		$lang->load('plg_'.$this->_type.'_'.$this->_name, JPATH_ADMINISTRATOR);
+		$lang->load('plg_'.$this->pluginType.'_'.$this->pluginName, JPATH_ADMINISTRATOR);
     }
 
     function onK2BeforeDisplay( &$item, &$params, $limitstart) {

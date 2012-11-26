@@ -16,8 +16,8 @@
         <folder>incptvk2imagegallery</folder>
         <folder>language</folder>
     </files>
-    
-    <languages folder="language/en-GB">
+	
+	<languages folder="language/en-GB">
         <language tag="en-GB">en-GB.plg_k2_incptvk2imagegallery.ini</language>
         <language tag="en-GB">en-GB.plg_k2_incptvk2imagegallery.sys.ini</language>
     </languages>
@@ -765,6 +765,371 @@
 					<option value="4000">4000</option>
 					<option value="4500">4500</option>
 					<option value="5000">5000</option>
+				</param>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			<param name="" type="header" default="PLG_K2_IG_XML_GALLERIA_SETTINGS" label="" description="" />
+			<param name="galleriaAutoplay" type="list" default="false" label="PLG_K2_IG_XML_GALLERIA_AUTOPLAY" description="PLG_K2_IG_XML_GALLERIA_AUTOPLAY_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+					<option value="1000">1000</option>
+					<option value="1500">1500</option>
+					<option value="2000">2000</option>
+					<option value="2500">2500</option>
+					<option value="3000">3000</option>
+					<option value="3500">3500</option>
+					<option value="4000">4000</option>
+					<option value="4500">4500</option>
+					<option value="5000">5000</option>
+					<option value="5500">5500</option>
+					<option value="6000">6000</option>
+					<option value="6500">6500</option>
+					<option value="7000">7000</option>
+					<option value="7500">7500</option>
+					<option value="8000">8000</option>
+					<option value="8500">8500</option>
+					<option value="9000">9000</option>
+					<option value="9500">9500</option>
+					<option value="10000">10000</option>
+				</param>
+				<param  name="galleriaCarousel" type="list" default="true" label="PLG_K2_IG_XML_GALLERIA_CAROUSEL"  
+                        description="PLG_K2_IG_XML_GALLERIA_CAROUSEL_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </param>
+				<param  name="galleriaCarouselSpeed" type="list" default="200" label="PLG_K2_IG_XML_GALLERIA_CAROUSEL_SPEED"  
+                        description="PLG_K2_IG_XML_GALLERIA_CAROUSEL_SPEED_DESC">
+                    <option value="100">100</option>
+					<option value="150">150</option>
+					<option value="200">200</option>
+					<option value="250">250</option>
+					<option value="300">300</option>
+					<option value="350">350</option>
+					<option value="400">400</option>
+					<option value="450">450</option>
+					<option value="500">500</option>
+					<option value="550">550</option>
+					<option value="600">600</option>
+					<option value="650">650</option>
+					<option value="700">700</option>
+					<option value="750">750</option>
+					<option value="800">800</option>
+					<option value="850">850</option>
+					<option value="900">900</option>
+					<option value="950">950</option>
+					<option value="1000">1000</option>
+					<option value="1050">1050</option>
+					<option value="1100">1100</option>
+					<option value="1150">1150</option>
+					<option value="1200">1200</option>
+                </param>
+				<param  name="galleriaCarouselSteps" type="list" default="auto" label="PLG_K2_IG_XML_GALLERIA_CAROUSEL_STEPS"  
+                        description="PLG_K2_IG_XML_GALLERIA_CAROUSEL_STEPS_DESC">
+					<option value="auto">auto</option>
+                    <option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="25">25</option>
+					<option value="30">30</option>
+					<option value="35">35</option>
+                </param>
+				<param  name="galleriaClickNext" type="list" default="false" label="PLG_K2_IG_XML_GALLERIA_CLICK_NEXT"  
+                        description="PLG_K2_IG_XML_GALLERIA_CLICK_NEXT_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </param>
+				<param  name="galleriaDebug" type="list" default="true" label="PLG_K2_IG_XML_GALLERIA_DEBUG"  
+                        description="PLG_K2_IG_XML_GALLERIA_DEBUG_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </param>
+				<param  name="galleriaEasing" type="list" default="galleria" label="PLG_K2_IG_XML_GALLERIA_EASING" 
+                        description="PLG_K2_IG_XML_GALLERIA_EASING_DESC">
+                    <option value="linear">linear</option>
+                    <option value="swing">swing</option>
+                    <option value="easeInQuad">easeInQuad</option>
+                    <option value="easeOutQuad">easeOutQuad</option>
+                    <option value="easeInOutQuad">easeInOutQuad</option>
+                    <option value="easeInCubic">easeInCubic</option>
+                    <option value="easeOutCubic">easeOutCubic</option>
+                    <option value="easeInOutCubic">easeInOutCubic</option>                    
+                    <option value="easeInQuart">easeInQuart</option>
+                    <option value="easeOutQuart">easeOutQuart</option>
+                    <option value="easeInOutQuart">easeInOutQuart</option>
+                    <option value="easeInQuint">easeInQuint</option>
+                    <option value="easeOutQuint">easeOutQuint</option>
+                    <option value="easeInOutQuint">easeInOutQuint</option>
+                    <option value="easeInExpo">easeInExpo</option>
+                    <option value="easeOutExpo">easeOutExpo</option>
+                    <option value="easeInOutExpo">easeInOutExpo</option>
+                    <option value="easeInSine">easeInSine</option>
+                    <option value="easeOutSine">easeOutSine</option>
+                    <option value="easeInOutSine">easeInOutSine</option>
+                    <option value="easeInCirc">easeInCirc</option>
+                    <option value="easeOutCirc">easeOutCirc</option>
+                    <option value="easeInOutCirc">easeInOutCirc</option>
+                    <option value="easeInElastic">easeInElastic</option>
+                    <option value="easeOutElastic">easeOutElastic</option>
+                    <option value="easeInOutElastic">easeInOutElastic</option>
+                    <option value="easeInBack">easeInBack</option>
+                    <option value="easeOutBack">easeOutBack</option>
+                    <option value="easeInOutBack">easeInOutBack</option>
+                    <option value="easeInBounce">easeInBounce</option>
+                    <option value="easeOutBounce">easeOutBounce</option>
+                    <option value="easeInOutBounce">easeInOutBounce</option>
+					<option value="galleria">galleria</option>
+					<option value="galleriaIn">galleriaIn</option>
+					<option value="galleriaOut">galleriaOut</option>
+                </param>
+				<param name="galleriaFullScreenCrop" type="list" default="false" label="PLG_K2_IG_XML_GALLERIA_FULL_SCREEN_CROP" description="PLG_K2_IG_XML_GALLERIA_FULL_SCREEN_CROP_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+					<option value="height">Height</option>
+					<option value="width">Width</option>
+					<option value="landscape">Landscape</option>
+					<option value="portrait">Portrait</option>
+				</param>
+				<param  name="galleriaFullScreenDoubleTap" type="list" default="true" label="PLG_K2_IG_XML_GALLERIA_FULL_SCREEN_DOUBLE_TAP"  
+                        description="PLG_K2_IG_XML_GALLERIA_FULL_SCREEN_DOUBLE_TAP_DESC">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </param>
+				<param  name="galleriaFullScreenTransition" type="list" default="fade" label="PLG_K2_IG_XML_GALLERIA_FULL_SCREEN_TRANSITION" 
+                        description="PLG_K2_IG_XML_GALLERIA_FULL_SCREEN_TRANSITION_DESC">
+                    <option value="fade">fade</option>
+                    <option value="flash">flash</option>
+                    <option value="pulse">pulse</option>
+                    <option value="slide">slide</option>
+                    <option value="fadeslide">fadeslide</option>
+                </param>
+				<param  name="galleriaHeight" type="text" default="400" size="4" 
+                            label="PLG_K2_IG_XML_GALLERIA_HEIGHT" 
+                            description="PLG_K2_IG_XML_GALLERIA_HEIGHT_DESC" />
+				<param name="galleriaIdleMode" type="list" default="true" label="PLG_K2_IG_XML_GALLERIA_IDLE_MODE" description="PLG_K2_IG_XML_GALLERIA_IDLE_MODE_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+					<option value="hover">Hover</option>
+				</param>
+				<param  name="galleriaIdleTime" type="text" default="3000" size="4" 
+                            label="PLG_K2_IG_XML_GALLERIA_IDLE_TIME" 
+                            description="PLG_K2_IG_XML_GALLERIA_IDLE_TIME_DESC" />
+				<param  name="galleriaIdleSpeed" type="text" default="200" size="4" 
+                            label="PLG_K2_IG_XML_GALLERIA_IDLE_SPEED" 
+                            description="PLG_K2_IG_XML_GALLERIA_IDLE_SPEED_DESC" />
+				<param name="galleriaImageCrop" type="list" default="false" label="PLG_K2_IG_XML_GALLERIA_IMAGE_CROP" description="PLG_K2_IG_XML_GALLERIA_IMAGE_CROP_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+					<option value="height">Height</option>
+					<option value="width">Width</option>
+					<option value="landscape">Landscape</option>
+					<option value="portrait">Portrait</option>
+				</param>
+				<param  name="galleriaImageMargin" type="text" default="0" size="4" 
+                            label="PLG_K2_IG_XML_GALLERIA_IMAGE_MARGIN" 
+                            description="PLG_K2_IG_XML_GALLERIA_IMAGE_MARGIN_DESC" />
+				<param name="galleriaImagePan" type="list" default="false" label="PLG_K2_IG_XML_GALLERIA_IMAGE_PAN" description="PLG_K2_IG_XML_GALLERIA_IMAGE_PAN_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+				</param>
+				<param  name="galleriaImagePanSmoothness" type="text" default="12" size="4" 
+                            label="PLG_K2_IG_XML_GALLERIA_IMAGE_PAN_SMOOTHNESS" 
+                            description="PLG_K2_IG_XML_GALLERIA_IMAGE_PAN_SMOOTHNESS_DESC" />
+				<param name="galleriaLayerFollow" type="list" default="true" label="PLG_K2_IG_XML_GALLERIA_LAYER_FOLLOW" description="PLG_K2_IG_XML_GALLERIA_LAYER_FOLLOW_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+				</param>
+				<param name="galleriaLightbox" type="list" default="false" label="PLG_K2_IG_XML_GALLERIA_LIGHTBOX" description="PLG_K2_IG_XML_GALLERIA_LIGHTBOX_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+				</param>
+				<param  name="galleriaLightboxFadeSpeed" type="list" default="200" label="PLG_K2_IG_XML_GALLERIA_LIGHTBOX_FADE_SPEED"  
+                        description="PLG_K2_IG_XML_GALLERIA_LIGHTBOX_FADE_SPEED_DESC">
+                    <option value="100">100</option>
+					<option value="150">150</option>
+					<option value="200">200</option>
+					<option value="250">250</option>
+					<option value="300">300</option>
+					<option value="350">350</option>
+					<option value="400">400</option>
+					<option value="450">450</option>
+					<option value="500">500</option>
+					<option value="550">550</option>
+					<option value="600">600</option>
+					<option value="650">650</option>
+					<option value="700">700</option>
+					<option value="750">750</option>
+					<option value="800">800</option>
+					<option value="850">850</option>
+					<option value="900">900</option>
+					<option value="950">950</option>
+					<option value="1000">1000</option>
+					<option value="1050">1050</option>
+					<option value="1100">1100</option>
+					<option value="1150">1150</option>
+					<option value="1200">1200</option>
+                </param>
+				<param  name="galleriaLightboxTransitionSpeed" type="list" default="300" label="PLG_K2_IG_XML_GALLERIA_LIGHTBOX_TRANSITION_SPEED"  
+                        description="PLG_K2_IG_XML_GALLERIA_LIGHTBOX_TRANSITION_SPEED_DESC">
+                    <option value="100">100</option>
+					<option value="150">150</option>
+					<option value="200">200</option>
+					<option value="250">250</option>
+					<option value="300">300</option>
+					<option value="350">350</option>
+					<option value="400">400</option>
+					<option value="450">450</option>
+					<option value="500">500</option>
+					<option value="550">550</option>
+					<option value="600">600</option>
+					<option value="650">650</option>
+					<option value="700">700</option>
+					<option value="750">750</option>
+					<option value="800">800</option>
+					<option value="850">850</option>
+					<option value="900">900</option>
+					<option value="950">950</option>
+					<option value="1000">1000</option>
+					<option value="1050">1050</option>
+					<option value="1100">1100</option>
+					<option value="1150">1150</option>
+					<option value="1200">1200</option>
+                </param>
+				<param  name="galleriaOverlayBackground" type="text" default="#0b0b0b" size="10" 
+                        label="PLG_K2_IG_XML_GALLERIA_OVERLAY_BACKGROUND" 
+                        description="PLG_K2_IG_XML_GALLERIA_OVERLAY_BACKGROUND_DESC" />
+				<param  name="galleriaOverlayOpacity" type="text" default="0.85" size="10" 
+                        label="PLG_K2_IG_XML_GALLERIA_OVERLAY_OPACITY" 
+                        description="PLG_K2_IG_XML_GALLERIA_OVERLAY_OPACITY_DESC" />
+				<param name="galleriaPauseOnInteraction" type="list" default="true" label="PLG_K2_IG_XML_GALLERIA_PAUSE_ON_INTERACTION" description="PLG_K2_IG_XML_GALLERIA_PAUSE_ON_INTERACTION_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+				</param>
+				<param  name="galleriaPreload" type="list" default="2" label="PLG_K2_IG_XML_GALLERIA_PRELOAD"  
+                        description="PLG_K2_IG_XML_GALLERIA_PRELOAD_DESC">
+                    <option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="all">all</option>
+                </param>
+				<param name="galleriaQueue" type="list" default="true" label="PLG_K2_IG_XML_GALLERIA_QUEUE" description="PLG_K2_IG_XML_GALLERIA_QUEUE_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+				</param>
+				<param name="galleriaResponsive" type="list" default="false" label="PLG_K2_IG_XML_GALLERIA_RESPONSIVE" description="PLG_K2_IG_XML_GALLERIA_RESPONSIVE">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+				</param>
+				<param name="galleriaShowCounter" type="list" default="true" label="PLG_K2_IG_XML_GALLERIA_SHOW_COUNTER" description="PLG_K2_IG_XML_GALLERIA_SHOW_COUNTER_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+				</param>
+				<param name="galleriaShowInfo" type="list" default="true" label="PLG_K2_IG_XML_GALLERIA_SHOW_INFO" description="PLG_K2_IG_XML_GALLERIA_SHOW_INFO_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+				</param>
+				<param name="galleriaShowImageNav" type="list" default="true" label="PLG_K2_IG_XML_GALLERIA_SHOW_IMAGE_NAV" description="PLG_K2_IG_XML_GALLERIA_SHOW_IMAGE_NAV_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+				</param>
+				<param name="galleriaSwipe" type="list" default="true" label="PLG_K2_IG_XML_GALLERIA_SWIPE" description="PLG_K2_IG_XML_GALLERIA_SWIPE_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+				</param>
+				<param name="galleriaThumbnails" type="list" default="true" label="PLG_K2_IG_XML_GALLERIA_THUMBNAILS" description="PLG_K2_IG_XML_GALLERIA_THUMBNAILS_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
+				</param>
+				<param  name="galleriaTransition" type="list" default="fade" label="PLG_K2_IG_XML_GALLERIA_TRANSITION" 
+                        description="PLG_K2_IG_XML_GALLERIA_TRANSITION_DESC">
+                    <option value="fade">fade</option>
+                    <option value="flash">flash</option>
+                    <option value="pulse">pulse</option>
+                    <option value="slide">slide</option>
+                    <option value="fadeslide">fadeslide</option>
+                </param>
+				<param  name="galleriaTransitionSpeed" type="list" default="400" label="PLG_K2_IG_XML_GALLERIA_TRANSITION_SPEED"  
+                        description="PLG_K2_IG_XML_GALLERIA_TRANSITION_SPEED_DESC">
+                    <option value="100">100</option>
+					<option value="150">150</option>
+					<option value="200">200</option>
+					<option value="250">250</option>
+					<option value="300">300</option>
+					<option value="350">350</option>
+					<option value="400">400</option>
+					<option value="450">450</option>
+					<option value="500">500</option>
+					<option value="550">550</option>
+					<option value="600">600</option>
+					<option value="650">650</option>
+					<option value="700">700</option>
+					<option value="750">750</option>
+					<option value="800">800</option>
+					<option value="850">850</option>
+					<option value="900">900</option>
+					<option value="950">950</option>
+					<option value="1000">1000</option>
+					<option value="1050">1050</option>
+					<option value="1100">1100</option>
+					<option value="1150">1150</option>
+					<option value="1200">1200</option>
+                </param>
+				<param name="galleriaTrueFullScreen" type="list" default="true" label="PLG_K2_IG_XML_GALLERIA_TRUE_FULL_SCREEN" description="PLG_K2_IG_XML_GALLERIA_TRUE_FULL_SCREEN_DESC">
+					<option value="true">PLG_K2_IG_XML_TRUE</option>
+					<option value="false">PLG_K2_IG_XML_FALSE</option>
 				</param>
     </params>
     
