@@ -171,7 +171,7 @@ a.removeImageButton {
     border-color: #C4C4C4;
     border-width: 1px;
     border-style: solid;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .info-holder {

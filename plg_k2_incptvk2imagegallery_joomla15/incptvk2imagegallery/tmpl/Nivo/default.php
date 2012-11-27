@@ -21,7 +21,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
     <div class="slider-wrapper theme-default">
         <div id="slider" class="nivoSlider">
             <?php foreach($images as $key=>$image): ?>
-                <img src="<?php echo JURI::root(true).$image; ?>" data-thumb="<?php echo JURI::root(true).$image; ?>" alt="<?php echo $imageTitles[$key]; ?>" title="#htmlcaption_<?php echo $key; ?>"/>
+                <img src="<?php echo JURI::root(true).$image; ?>" data-thumb="<?php echo JURI::root(true).$image; ?>" alt="<?php echo (isset($imageTitles[$key])) ? $imageTitles[$key]: ""; ?>>" title="#htmlcaption_<?php echo $key; ?>"/>
             <?php endforeach; ?>
         </div>
         <?php foreach($images as $key=>$image): ?>
