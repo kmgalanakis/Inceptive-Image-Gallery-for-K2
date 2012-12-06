@@ -34,7 +34,6 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
 	}
 
     function onK2BeforeDisplay( &$item, &$params, $limitstart) {
-        $mainframe = &JFactory::getApplication();
         // ------------------------------- Get item specific parameters --------------------------------
         $k2PluginData = new K2Parameter($item->plugins, '', $this->pluginName);
         $igParameters = $k2PluginData->get('IGParameters');
@@ -42,12 +41,12 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
             $k2IGposition = $k2PluginData->get('k2IGposition');
         else:
             // ----------------------------------- Get plugin parameters -----------------------------------
-            $plugin 		= &JPluginHelper::getPlugin('k2', $this->pluginName);    
+            $plugin = JPluginHelper::getPlugin('k2', $this->pluginName);    
 			
-			$pluginParams = new JRegistry();
-			$pluginParams->loadString($plugin->params, 'JSON');
+            $pluginParams = new JRegistry();
+            $pluginParams->loadString($plugin->params, 'JSON');
 			
-            $k2IGposition 	= $pluginParams->get('k2IGposition');
+            $k2IGposition = $pluginParams->get('k2IGposition');
         endif;
         
         if($k2IGposition == 'K2BeforeDisplay')
@@ -57,7 +56,6 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
     }
     
     function onK2AfterDisplay( &$item, &$params, $limitstart) {
-        $mainframe = &JFactory::getApplication();
         // ------------------------------- Get item specific parameters --------------------------------
         $k2PluginData = new K2Parameter($item->plugins, '', $this->pluginName);
         $igParameters = $k2PluginData->get('IGParameters');
@@ -65,12 +63,12 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
             $k2IGposition = $k2PluginData->get('k2IGposition');
         else:
             // ----------------------------------- Get plugin parameters -----------------------------------
-            $plugin 		= &JPluginHelper::getPlugin('k2', $this->pluginName);    
+            $plugin = JPluginHelper::getPlugin('k2', $this->pluginName);    
 			
-			$pluginParams = new JRegistry();
-			$pluginParams->loadString($plugin->params, 'JSON');
+            $pluginParams = new JRegistry();
+            $pluginParams->loadString($plugin->params, 'JSON');
 			
-            $k2IGposition 	= $pluginParams->get('k2IGposition');
+            $k2IGposition = $pluginParams->get('k2IGposition');
         endif;
         
         if($k2IGposition == 'K2AfterDisplay')
@@ -80,9 +78,8 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
     }
     
     function onK2BeforeDisplayTitle( &$item, &$params, $limitstart) {
-        $mainframe = &JFactory::getApplication();
         // ----------------------------------- Get plugin parameters -----------------------------------
-        $plugin         =   &JPluginHelper::getPlugin('k2', $this->pluginName);
+        $plugin         =   JPluginHelper::getPlugin('k2', $this->pluginName);
         $pluginParams   =   new JParameter($plugin->params);
         // ------------------------------- Get item specific parameters --------------------------------
         $k2PluginData = new K2Parameter($item->plugins, '', $this->pluginName);
@@ -91,7 +88,7 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
             $k2IGposition = $k2PluginData->get('k2IGposition');
         else:
             // ----------------------------------- Get plugin parameters -----------------------------------
-            $plugin         =   &JPluginHelper::getPlugin('k2', $this->pluginName);
+            $plugin         =   JPluginHelper::getPlugin('k2', $this->pluginName);
             $pluginParams   =   new JParameter($plugin->params);
             $k2IGposition = $pluginParams->get('k2IGposition');
         endif;
@@ -103,7 +100,6 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
     }
 
     function onK2AfterDisplayTitle( &$item, &$params, $limitstart) {
-        $mainframe = &JFactory::getApplication();
         // ------------------------------- Get item specific parameters --------------------------------
         $k2PluginData = new K2Parameter($item->plugins, '', $this->pluginName);
         $igParameters = $k2PluginData->get('IGParameters');
@@ -111,10 +107,10 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
             $k2IGposition = $k2PluginData->get('k2IGposition');
         else:
             // ----------------------------------- Get plugin parameters -----------------------------------
-            $plugin 		= &JPluginHelper::getPlugin('k2', $this->pluginName);    
+            $plugin = JPluginHelper::getPlugin('k2', $this->pluginName);    
 			
-			$pluginParams = new JRegistry();
-			$pluginParams->loadString($plugin->params, 'JSON');
+            $pluginParams = new JRegistry();
+            $pluginParams->loadString($plugin->params, 'JSON');
 			
             $k2IGposition 	= $pluginParams->get('k2IGposition');
         endif;
@@ -126,7 +122,6 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
     }
 
     function onK2BeforeDisplayContent( &$item, &$params, $limitstart) {
-        $mainframe = &JFactory::getApplication();
         // ------------------------------- Get item specific parameters --------------------------------
         $k2PluginData = new K2Parameter($item->plugins, '', $this->pluginName);
         $igParameters = $k2PluginData->get('IGParameters');
@@ -134,10 +129,10 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
             $k2IGposition = $k2PluginData->get('k2IGposition');
         else:
             // ----------------------------------- Get plugin parameters -----------------------------------
-            $plugin 		= &JPluginHelper::getPlugin('k2', $this->pluginName);    
+            $plugin = JPluginHelper::getPlugin('k2', $this->pluginName);    
 			
-			$pluginParams = new JRegistry();
-			$pluginParams->loadString($plugin->params, 'JSON');
+            $pluginParams = new JRegistry();
+            $pluginParams->loadString($plugin->params, 'JSON');
 			
             $k2IGposition 	= $pluginParams->get('k2IGposition');
         endif;
@@ -148,9 +143,7 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
             return '';
     }
     
-    function onK2AfterDisplayContent( &$item, &$params, $limitstart) {
-        $mainframe = &JFactory::getApplication();
-        
+    function onK2AfterDisplayContent( &$item, &$params, $limitstart) {        
         // ------------------------------- Get item specific parameters --------------------------------
         $k2PluginData = new K2Parameter($item->plugins, '', $this->pluginName);
         $igParameters = $k2PluginData->get('IGParameters');
@@ -158,10 +151,10 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
             $k2IGposition = $k2PluginData->get('k2IGposition');
         else:
             // ----------------------------------- Get plugin parameters -----------------------------------
-            $plugin 		= &JPluginHelper::getPlugin('k2', $this->pluginName);    
+            $plugin = JPluginHelper::getPlugin('k2', $this->pluginName);    
 			
-			$pluginParams = new JRegistry();
-			$pluginParams->loadString($plugin->params, 'JSON');
+            $pluginParams = new JRegistry();
+            $pluginParams->loadString($plugin->params, 'JSON');
 			
             $k2IGposition 	= $pluginParams->get('k2IGposition');
         endif;
@@ -182,18 +175,11 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
         // We only want to display the images in the item view
         if ($option == 'com_k2' && $view == 'item' && $id == $item->id)
         {
-            //$mainframe= &JFactory::getApplication();
-            $document = &JFactory::getDocument();
-
-            // Assign paths
-            //$sitePath = JPATH_SITE;
-            //$siteUrl  = JURI::root(true);
-                
             // Includes
             require_once(dirname(__FILE__).'/'.$this->pluginName.'/'.'includes'.'/'.'helper.php');
             
             // ----------------------------------- Get plugin parameters -----------------------------------
-            $plugin 		= &JPluginHelper::getPlugin('k2', $this->pluginName);    
+            $plugin 		= JPluginHelper::getPlugin('k2', $this->pluginName);    
 			
 			$pluginParams = new JRegistry();
 			$pluginParams->loadString($plugin->params, 'JSON');
@@ -210,10 +196,10 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
                 $theme     =   $k2PluginData->get('k2IGtheme');
             else:
                 // ----------------------------------- Get plugin parameters -----------------------------------
-                $plugin 		= &JPluginHelper::getPlugin('k2', $this->pluginName);    
+                $plugin = JPluginHelper::getPlugin('k2', $this->pluginName);    
 				
-				$pluginParams = new JRegistry();
-				$pluginParams->loadString($plugin->params, 'JSON');
+                $pluginParams = new JRegistry();
+                $pluginParams->loadString($plugin->params, 'JSON');
 
                 /* General parameters */
                 $theme     =   $pluginParams->get('defaultTheme');
@@ -244,8 +230,7 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
             
             ob_start();
             $getTemplatePath = K2ImageGalleryHelper::getTemplatePath($this->pluginName,'default.php',$theme);
-            $getTemplatePath = $getTemplatePath->file;
-            include($getTemplatePath);
+            include($getTemplatePath->file);
             $output = $this->plg_copyrights_start.ob_get_clean().$this->plg_copyrights_end;     
             
             return $output;                
