@@ -26,7 +26,7 @@ if(version_compare(JVERSION,'3.0.0','ge'))
 		// This function returns the input of the element
 		protected function getInput()
 		{   
-			$document = &JFactory::getDocument();
+			$document = JFactory::getDocument();
 			
 			// Get the K2 Item id.
 			$id = JRequest::getInt('cid');

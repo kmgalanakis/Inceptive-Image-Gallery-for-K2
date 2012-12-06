@@ -13,9 +13,9 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 class K2ImageGalleryHelper {
 
 	// Path overrides for MVC templating
-	function getTemplatePath($pluginName,$file,$tmpl){
+	static function getTemplatePath($pluginName,$file,$tmpl){
 
-		$mainframe = &JFactory::getApplication();
+		$mainframe = JFactory::getApplication();
 		$p = new JObject;
 		$pluginGroup = 'k2';
 

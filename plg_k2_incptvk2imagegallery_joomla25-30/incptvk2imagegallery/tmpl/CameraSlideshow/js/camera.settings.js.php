@@ -13,25 +13,25 @@
 	
     $jpath_base = realpath(dirname(__FILE__).'/'.'../../../../../../..' );
         
-	if(file_exists($jpath_base .'/'.'includes')):
-		define( 'JPATH_BASE', $jpath_base);
-		require_once ( $jpath_base .'/'.'includes'.'/'.'defines.php' );
-		require_once ( $jpath_base .'/'.'includes'.'/'.'framework.php' );
-	else:
-		$jpath_base = realpath(dirname(__FILE__).'/'.'../../../../../..' );
-		define( 'JPATH_BASE', $jpath_base);
-		require_once ( $jpath_base .'/'.'includes'.'/'.'defines.php' );
-		require_once ( $jpath_base .'/'.'includes'.'/'.'framework.php' );
-	endif;
+    if(file_exists($jpath_base .'/'.'includes')):
+            define( 'JPATH_BASE', $jpath_base);
+            require_once ( $jpath_base .'/'.'includes'.'/'.'defines.php' );
+            require_once ( $jpath_base .'/'.'includes'.'/'.'framework.php' );
+    else:
+            $jpath_base = realpath(dirname(__FILE__).'/'.'../../../../../..' );
+            define( 'JPATH_BASE', $jpath_base);
+            require_once ( $jpath_base .'/'.'includes'.'/'.'defines.php' );
+            require_once ( $jpath_base .'/'.'includes'.'/'.'framework.php' );
+    endif;
 
     $mainframe = JFactory::getApplication('site');
     
     jimport( 'joomla.plugin.helper' );
     
-    $plugin             =   &JPluginHelper::getPlugin('k2', 'incptvk2imagegallery');
+    $plugin = JPluginHelper::getPlugin('k2', 'incptvk2imagegallery');
     
-	$pluginParams = new JRegistry();
-	$pluginParams->loadString($plugin->params, 'JSON');
+    $pluginParams = new JRegistry();
+    $pluginParams->loadString($plugin->params, 'JSON');
     
     $alignment              = $pluginParams->get('cameraAlignment');
     $autoAdvance            = $pluginParams->get('cameraAutoAdvance');

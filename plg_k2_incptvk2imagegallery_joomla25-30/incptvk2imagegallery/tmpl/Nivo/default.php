@@ -12,7 +12,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
         $getTemplatePath = K2ImageGalleryHelper::getTemplatePath($this->pluginName,'',$theme);
         $getTemplatePath = $getTemplatePath->http;
-    
+        $document = JFactory::getDocument();
         $document->addStyleSheet($getTemplatePath.'themes'. '/' .'default'. '/' .'default.css');
         $document->addStyleSheet($getTemplatePath.'css'. '/' .'nivo-slider.css');
         $document->addStyleSheet($getTemplatePath.'css'. '/' .'style.css');

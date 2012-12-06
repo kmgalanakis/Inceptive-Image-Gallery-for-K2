@@ -12,7 +12,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
     
     $getTemplatePath = K2ImageGalleryHelper::getTemplatePath($this->pluginName,'',$theme);
     $getTemplatePath = $getTemplatePath->http;
-
+    $document = JFactory::getDocument();
     $document->addScript($getTemplatePath.'js'. '/' .'jquery.min.js');
     $document->addScript($getTemplatePath.'js'. '/' .'jquery.mobile.customized.min.js');
     $document->addScript($getTemplatePath.'js'. '/' .'jquery.easing.1.3.js');

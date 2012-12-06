@@ -9,7 +9,7 @@
     define( '_JEXEC', 1 );
 	// no direct access
 	defined( '_JEXEC' ) or die( 'Restricted access' ); 
-    define( 'DS', DIRECTORY_SEPARATOR );
+        define( 'DS', DIRECTORY_SEPARATOR );
 	
 	$jpath_base = realpath(dirname(__FILE__).'/'.'../../../../../../..' );
         
@@ -24,16 +24,16 @@
 		require_once ( $jpath_base .'/'.'includes'.'/'.'framework.php' );
 	endif;
 
-    $mainframe = JFactory::getApplication('site');
+        $mainframe = JFactory::getApplication('site');
 	
 	jimport( 'joomla.plugin.helper' );
     
-	$plugin =   &JPluginHelper::getPlugin('k2', 'incptvk2imagegallery');
+	$plugin = JPluginHelper::getPlugin('k2', 'incptvk2imagegallery');
     
 	$pluginParams = new JRegistry();
 	$pluginParams->loadString($plugin->params, 'JSON');    
 	
-    $autoplay	= $pluginParams->get('galleriaAutoplay');
+        $autoplay	= $pluginParams->get('galleriaAutoplay');
 	$carousel	= $pluginParams->get('galleriaCarousel');
 	$carouselSpeed	= $pluginParams->get('galleriaCarouselSpeed');
 	$carouselSteps	= $pluginParams->get('galleriaCarouselSteps');

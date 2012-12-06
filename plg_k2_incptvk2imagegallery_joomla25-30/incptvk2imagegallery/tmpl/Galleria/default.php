@@ -12,7 +12,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
         $getTemplatePath = K2ImageGalleryHelper::getTemplatePath($this->pluginName,'',$theme);
         $getTemplatePath = $getTemplatePath->http;
-    
+        $document = JFactory::getDocument();
         $document->addStyleSheet($getTemplatePath.'css'. '/' .'galleria.classic.css');
     ?>
 	
