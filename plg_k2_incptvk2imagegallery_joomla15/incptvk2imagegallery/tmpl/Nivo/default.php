@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		1.0
+ * @version		1.2
  * @package		Inceptive Image Gallery for K2(K2 plugin)
  * @author              Inceptive - http://www.inceptive.gr
  * @copyright           Copyright (c) 2006 - 2012 Inceptive GP. All rights reserved.
@@ -21,7 +21,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
     <div class="slider-wrapper theme-default">
         <div id="slider" class="nivoSlider">
             <?php foreach($images as $key=>$image): ?>
-                <img src="<?php echo JURI::root(true).$image; ?>" data-thumb="<?php echo JURI::root(true).$image; ?>" alt="<?php echo $imageTitles[$key]; ?>" title="#htmlcaption_<?php echo $key; ?>"/>
+                <img src="<?php echo JURI::root(true).$image; ?>" data-thumb="<?php echo JURI::root(true).$image; ?>" alt="<?php echo (isset($imageTitles[$key])) ? $imageTitles[$key]: ""; ?>>" title="#htmlcaption_<?php echo $key; ?>"/>
             <?php endforeach; ?>
         </div>
         <?php foreach($images as $key=>$image): ?>

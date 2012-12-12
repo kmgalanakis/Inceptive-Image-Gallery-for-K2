@@ -64,6 +64,7 @@ $K2(document).ready(
         
         //Remove the "Simple Image Gallery Pro missing" notification
         $K2('#k2Tab3 #system-message').remove();
+		$K2('#k2Tab3 .alert').remove();
         
         //Show or Hide custom image gallery parameters per K2 item
         $K2("#imageGalleryParameters").change(function() {

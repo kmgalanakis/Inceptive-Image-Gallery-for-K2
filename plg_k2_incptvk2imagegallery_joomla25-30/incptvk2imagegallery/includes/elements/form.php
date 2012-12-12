@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		1.1
+ * @version		1.2
  * @package		Inceptive Image Gallery for K2(K2 plugin)
  * @author              Inceptive - http://www.inceptive.gr
  * @copyright           Copyright (c) 2006 - 2012 Inceptive GP. All rights reserved.
@@ -29,12 +29,12 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <?php 
 
     // Get timthumb parameters from plugin settings
-    $plugin = &JPluginHelper::getPlugin('k2', $this->pluginName);    
+    $plugin = JPluginHelper::getPlugin('k2', $this->pluginName);    
 	
-	$pluginParams = new JRegistry();
-	$pluginParams->loadString($plugin->params, 'JSON');
-	
-	$timthumbWidth = $pluginParams->get('twidth');
+    $pluginParams = new JRegistry();
+    $pluginParams->loadString($plugin->params, 'JSON');
+
+    $timthumbWidth = $pluginParams->get('twidth');
     $timthumbHeight = $pluginParams->get('theight');
     $timthumbQuality = $pluginParams->get('tquality');
     $timthumbLink = $pluginLivePath. '/' .'includes'. '/' .'elements'. '/' .'lib'. '/' .'timthumb.php?';
@@ -137,7 +137,7 @@ endif; ?>
                         <div class="image-preview">
                             <p class="key_label"><?php echo JText::_('PLG_K2_IG_IMAGE_PREVIEW'); ?></p>
                             <a class="modal" rel="{handler: 'image'}" href="<?php echo $image; ?>" title="<?php echo JText::_('K2_CLICK_ON_IMAGE_TO_PREVIEW_IN_ORIGINAL_SIZE'); ?>">
-                                        <img alt="<?php echo $imageTitles[$key]; ?>" 
+                                        <img alt="<?php echo (isset($imageTitles[$key])) ? $imageTitles[$key]: ''; ?>" 
                                             src="<?php echo $timthumbLink.'src='.JURI::root(true).$image; ?>" class="k2ImageGalleryAdminImage" />
                                 </a>
                         </div>

@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		1.1
+ * @version		1.2
  * @package		Inceptive Image Gallery for K2(K2 plugin)
  * @author              Inceptive - http://www.inceptive.gr
  * @copyright           Copyright (c) 2006 - 2012 Inceptive GP. All rights reserved.
@@ -26,7 +26,7 @@ if(version_compare(JVERSION,'3.0.0','ge'))
 		// This function returns the input of the element
 		protected function getInput()
 		{   
-			$document = &JFactory::getDocument();
+			$document = JFactory::getDocument();
 			
 			// Get the K2 Item id.
 			$id = JRequest::getInt('cid');
@@ -79,7 +79,7 @@ if(version_compare(JVERSION,'3.0.0','l'))
 		// This function returns the input of the element
 		function fetchElement($name, $value, &$node, $control_name)
 		{   
-			$document = &JFactory::getDocument();
+			$document = JFactory::getDocument();
 			
 			// Get the K2 Item id.
 			$id = JRequest::getInt('cid');
