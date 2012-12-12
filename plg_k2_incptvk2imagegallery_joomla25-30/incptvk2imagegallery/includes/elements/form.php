@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		1.1
+ * @version		1.2
  * @package		Inceptive Image Gallery for K2(K2 plugin)
  * @author              Inceptive - http://www.inceptive.gr
  * @copyright           Copyright (c) 2006 - 2012 Inceptive GP. All rights reserved.
