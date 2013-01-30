@@ -11,14 +11,14 @@
 	defined( '_JEXEC' ) or die( 'Restricted access' ); 
     define( 'DS', DIRECTORY_SEPARATOR );
 	
-    $jpath_base = realpath(dirname(__FILE__).'/'.'../../../../../../..' );
+    $jpath_base = realpath(dirname(__FILE__).'/'.'../../../../../..' );
         
 	if(file_exists($jpath_base .'/'.'includes')):
 		define( 'JPATH_BASE', $jpath_base);
 		require_once ( $jpath_base .'/'.'includes'.'/'.'defines.php' );
 		require_once ( $jpath_base .'/'.'includes'.'/'.'framework.php' );
 	else:
-		$jpath_base = realpath(dirname(__FILE__).'/'.'../../../../../..' );
+		$jpath_base = realpath(dirname(__FILE__).'/'.'../../../../../../..' );
 		define( 'JPATH_BASE', $jpath_base);
 		require_once ( $jpath_base .'/'.'includes'.'/'.'defines.php' );
 		require_once ( $jpath_base .'/'.'includes'.'/'.'framework.php' );
