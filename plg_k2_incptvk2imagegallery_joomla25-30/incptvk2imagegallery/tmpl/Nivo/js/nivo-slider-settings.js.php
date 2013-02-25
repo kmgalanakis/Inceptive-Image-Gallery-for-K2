@@ -50,8 +50,9 @@
     $randomStart        = $pluginParams->get('nivoRandomStart');
 ?>
 
-jQuery(window).load(function() {
-    jQuery('#slider').nivoSlider({
+var $incptvK2 = jQuery.noConflict();
+$incptvK2(window).load(function() {
+    $incptvK2('#slider').nivoSlider({
         effect: '<?php echo $effect; ?>', // Specify sets like: 'fold,fade,sliceDown'
         slices: <?php echo $slices; ?>, // For slice animations
         boxCols: <?php echo $boxCols; ?>, // For box animations

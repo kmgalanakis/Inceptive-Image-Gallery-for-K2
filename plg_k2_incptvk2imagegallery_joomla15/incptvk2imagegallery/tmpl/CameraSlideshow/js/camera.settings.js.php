@@ -72,9 +72,9 @@
     $time                   = $pluginParams->get('cameraTime');
     $transPeriod            = $pluginParams->get('cameraTransPeriod');
 ?>
-
-jQuery(function(){
-        jQuery('#camera_wrap_1').camera({
+var $incptvK2 = jQuery.noConflict();
+$incptvK2(function(){
+        $incptvK2('#camera_wrap_1').camera({
             alignment: '<?php echo $alignment; ?>',
             autoAdvance: <?php if($autoAdvance && strtolower($autoAdvance) !== "false"):echo "true";else:echo "false";endif; ?>,
             mobileAutoAdvance: <?php if($mobileAutoAdvance && strtolower($mobileAutoAdvance) !== "false"):echo "true";else:echo "false";endif; ?>,
