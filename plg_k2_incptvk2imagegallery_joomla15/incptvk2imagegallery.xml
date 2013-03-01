@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <install version="1.5" type="plugin" group="k2" method="upgrade">
     <name>Inceptive Image Gallery for K2</name>
-    <author>Inceptive</author>
+    <author>Inceptive Design Labs</author>
     <authorEmail>info@inceptive.gr</authorEmail>
     <authorUrl>www.inceptive.gr</authorUrl>
     <copyright>Copyright (c) 2006-2012 Inceptive GP. All rights reserved.</copyright>
-    <creationDate>December 12, 2012</creationDate>
+    <creationDate>March 1, 2013</creationDate>
     <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
-    <version>1.2</version>
+    <version>1.3</version>
     <description>PLG_K2_IG_XML_DESC</description>
 	
     <files>

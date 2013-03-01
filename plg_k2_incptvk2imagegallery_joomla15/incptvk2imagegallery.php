@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		1.2
+ * @version		1.3
  * @package		Inceptive Image Gallery for K2(K2 plugin)
  * @author		Inceptive - http://www.inceptive.gr
  * @copyright	Copyright (c) 2006 - 2012 Inceptive GP. All rights reserved.
@@ -22,8 +22,8 @@ class plgK2IncptvK2ImageGallery extends K2Plugin
     // K2 human readable plugin name. This the title of the plugin users see in K2 form.
     var $pluginNameHumanReadable = 'Inceptive Image Gallery for K2';
     
-    var $plg_copyrights_start		= "\n\n<!-- Inceptive \"K2ImageGallery\" Plugin (v1.2) starts here -->\n";
-    var $plg_copyrights_end		= "\n<!-- Inceptive \"K2ImageGallery\" Plugin (v1.2) ends here -->\n\n";
+    var $plg_copyrights_start		= "\n\n<!-- Inceptive \"K2ImageGallery\" Plugin (v1.3) starts here -->\n";
+    var $plg_copyrights_end		= "\n<!-- Inceptive \"K2ImageGallery\" Plugin (v1.3) ends here -->\n\n";
 
     // Constructor
     public function __construct(&$subject, $config)
