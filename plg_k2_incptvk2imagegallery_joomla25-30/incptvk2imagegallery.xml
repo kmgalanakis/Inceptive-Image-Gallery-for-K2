@@ -40,6 +40,11 @@
                 </field>
                 <field name="defaultTheme" type="folderlist" label="PLG_K2_IG_XML_DEFAULT_THEME" description="PLG_K2_IG_XML_DEFAULT_THEME_DESCRIPTION" default="Nivo" directory="/plugins/k2/incptvk2imagegallery/incptvk2imagegallery/tmpl" hide_default="true" hide_none="true" />
                 <field name="" type="header" default="PLG_K2_IG_XML_TIMTHUMB_PARAMETERS_ADMINISTRATOR" label="" description="" />
+				<field  name="tenabled" type="list" default="true" label="PLG_K2_IG_XML_TIMTHUMB_ENABLED" 
+                        description="PLG_K2_IG_XML_TIMTHUMB_ENABLED_DESCRIPTION">
+                    <option value="true">PLG_K2_IG_XML_TRUE</option>
+                    <option value="false">PLG_K2_IG_XML_FALSE</option>
+                </field>
                 <field  name="twidth" type="text" default="120" size="4" 
                         label="PLG_K2_IG_XML_TIMTHUMB_WIDTH" 
                         description="PLG_K2_IG_XML_THE_PRESELECTED_WIDTH_OF_THE_THUMBNAIL_IN_PIXELS_LEAVE_BLANK_TO_OMMIT_WIDTH_PARAMETER_IN_TIMTHUMB" />

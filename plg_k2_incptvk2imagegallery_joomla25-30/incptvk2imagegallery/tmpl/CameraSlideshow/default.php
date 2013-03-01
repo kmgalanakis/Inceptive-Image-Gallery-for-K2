@@ -21,6 +21,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
     
     $document->addStyleSheet($getTemplatePath.'css'. '/' .'camera.css');
 
+    $timthumbEnabled = $pluginParams->get('tenabled');
     $timthumbWidth = $pluginParams->get('twidth');
     $timthumbHeight = $pluginParams->get('theight');
     $timthumbQuality = $pluginParams->get('tquality');
@@ -39,7 +40,11 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
     <div class="fluid_container">
         <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
             <?php foreach($images as $key=>$image): ?>
-                <div data-thumb="<?php echo $timthumbLink.'src='.JURI::root(true).$image; ?>" data-src="<?php echo JURI::root(true).$image; ?>">
+		<?php if($timthumbEnabled === 'true'): ?>
+		    <div data-thumb="<?php echo $timthumbLink.'src='.JURI::root(true).$image; ?>" data-src="<?php echo JURI::root(true).$image; ?>">
+		<?php else: ?>
+		    <div data-thumb="<?php echo 'src='.JURI::root(true).$image; ?>" data-src="<?php echo JURI::root(true).$image; ?>">
+		<?php endif; ?>
                 <?php //if($imageDescriptions[$key] != ''): ?>
                     <div class="camera_caption">
                         <strong><?php echo (isset($imageTitles[$key])) ? $imageTitles[$key]: ""; ?></strong><br/><em><?php echo (isset($imageDescriptions[$key])) ? $imageDescriptions[$key]: ""; ?></em>
