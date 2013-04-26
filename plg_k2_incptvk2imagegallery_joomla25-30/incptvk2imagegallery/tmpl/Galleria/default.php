@@ -32,7 +32,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
     </div>
 
     <?php
-        $document->addScript($getTemplatePath.'js/galleria-1.2.8.min.js');
+        $document->addScript($getTemplatePath.'js/galleria-1.2.9.min.js');
 		
 		$document->addScript($getTemplatePath.'js/galleria-settings.js.php');
 	

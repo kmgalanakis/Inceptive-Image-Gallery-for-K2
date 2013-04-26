@@ -1,10 +1,10 @@
 .paramlist_value { width: 730px; }
 
-fieldset input,
-fieldset textarea,
-fieldset select,
-fieldset img,
-fieldset button {
+.simpleTabsContent fieldset input,
+.simpleTabsContent fieldset textarea,
+.simpleTabsContent fieldset select,
+.simpleTabsContent fieldset img,
+.simpleTabsContent fieldset button {
     float: none;
     width: auto;
     margin: 0 0 0 5px;

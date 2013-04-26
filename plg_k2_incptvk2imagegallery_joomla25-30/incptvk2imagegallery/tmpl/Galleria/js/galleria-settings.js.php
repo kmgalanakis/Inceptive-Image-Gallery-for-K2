@@ -109,7 +109,7 @@
 		imagePan: 	<?php if($imagePan && strtolower($imagePan) !== "false"):echo "true";else:echo "false";endif; ?>,
 		imagePanSmoothness: 	<?php echo $imagePanSmoothness; ?>,
 		imagePosition: 	<?php /*echo $imagePosition;*/ echo "'center'"; ?>,
-		imageTimeout: 	<?php /*echo $imageTimeout;*/ echo '3000'; ?>,
+		imageTimeout: 	<?php /*echo $imageTimeout;*/ echo '30000'; ?>,
 		/*initialTransition: 	<?php echo $initialTransition; ?>,*/
 		/*keepSource: 	<?php echo $keepSource; ?>,*/
 		layerFollow: 	<?php if($layerFollow && strtolower($layerFollow) !== "false"):echo "true";else:echo "false";endif; ?>,
