@@ -68,7 +68,7 @@ if(version_compare(JVERSION,'3.0.0','ge'))
 
 if(version_compare(JVERSION,'3.0.0','l'))
 {
-	class JElementIncptvK2ImageGallery extends JElement
+	class JFormFieldIncptvK2ImageGallery extends JFormField
 	{
 		// Declare the element type
 		var $_name = 'image';
@@ -77,7 +77,7 @@ if(version_compare(JVERSION,'3.0.0','l'))
 		var $pluginName = 'incptvk2imagegallery';
 
 		// This function returns the input of the element
-		function fetchElement($name, $value, &$node, $control_name)
+		function getInput()
 		{   
 			$document = JFactory::getDocument();
 			
