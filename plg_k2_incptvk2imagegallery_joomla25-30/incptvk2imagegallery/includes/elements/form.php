@@ -141,7 +141,7 @@ endif; ?>
 				    <?php if($timthumbEnabled === 'true'): ?>
                                         <img alt="<?php echo (isset($imageTitles[$key])) ? $imageTitles[$key]: ''; ?>" src="<?php echo $timthumbLink.'src='.JURI::root(true).$image; ?>" class="k2ImageGalleryAdminImage" />
 				    <?php else: ?>
-					<img style ="width:100px;" alt="<?php echo (isset($imageTitles[$key])) ? $imageTitles[$key]: ''; ?>" src="<?php echo JURI::root(true).$image; ?>" class="k2ImageGalleryAdminImage" />
+					<img style ="width:<?php echo $timthumbWidth; ?>px;" alt="<?php echo (isset($imageTitles[$key])) ? $imageTitles[$key]: ''; ?>" src="<?php echo JURI::root(true).$image; ?>" class="k2ImageGalleryAdminImage" />
 				    <?php endif; ?>
                                 </a>
                         </div>
