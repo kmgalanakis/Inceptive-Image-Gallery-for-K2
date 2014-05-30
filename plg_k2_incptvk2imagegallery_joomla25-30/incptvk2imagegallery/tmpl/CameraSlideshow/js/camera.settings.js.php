@@ -88,7 +88,7 @@ $incptvK2(function(){
             gridDifference: <?php echo $gridDifference; ?>,
             height: '<?php echo $height; ?>',
             hover: <?php if($hover && strtolower($hover) !== "false"):echo "true";else:echo "false";endif; ?>,
-            loader: '<?php if($loader && strtolower($loader) !== "false"):echo "true";else:echo "false";endif; ?>',
+            loader: '<?php echo $loader; ?>',
             loaderColor: '<?php echo $loaderColor; ?>',
             loaderBgColor: '<?php echo $loaderBgColor; ?>',
             loaderOpacity: <?php echo $loaderOpacity; ?>,
