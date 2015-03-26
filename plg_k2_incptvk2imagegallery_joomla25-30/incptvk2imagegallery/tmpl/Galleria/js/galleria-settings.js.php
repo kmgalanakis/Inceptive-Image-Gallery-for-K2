@@ -87,7 +87,8 @@
 	
 
 ?>
-	Galleria.loadTheme('<?php echo JURI::root(true).'/../themes/classic/galleria.classic.min.js'; ?>');
+	<?php $path = dirname($_SERVER['PHP_SELF']); ?>
+	Galleria.loadTheme('<?php echo $path.'/../themes/classic/galleria.classic.min.js'; ?>');
 	
 	Galleria.configure({
 		autoplay: 	<?php if($autoplay && strtolower($autoplay) !== "false"):if(strtolower($autoplay === 1)):echo $autoplay;else:echo "true";endif;else:echo "false";endif; ?>,
